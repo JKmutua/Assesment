@@ -1,2 +1,8 @@
-<template></template>
-<script></script>
+<template>
+  <div><AuthResetPass /></div>
+</template>
+<script setup>
+definePageMeta({
+  layout: "authlayout",
+});
+</script>

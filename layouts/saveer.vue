@@ -1,74 +1,34 @@
 <template>
   <div class="bg-white dark:bg-gray-900">
-    <div class="">
-      <aside
-        id="sidebar-multi-level-sidebar"
-        class="fixed top-0 left-0 z-40 w-72 h-screen transition-transform -translate-x-full sm:translate-x-0"
-        aria-label="Sidebar"
-      >
-        <div class="h-full overflow-y-auto bg-white dark:bg-gray-800">
-          <div class="flex flex-row">
-            <div
-              class="w-20 h-screen border-e border-gray-100 dark:border-gray-700"
-            >
+    <div class="flex flex-1 overflow-hidden">
+      <div class="fixed overflow-y-auto w-64">
+        <div
+          class="w-20 flex justify-center py-3 dark:bg-gray-800 border-e border-gray-200 dark:border-gray-600"
+        >
+          <ul class="list-none">
+            <li>
               <img
-                class="w-12 h-12 mx-auto mt-3"
+                class="w-12 h-12 mr-2"
                 src="/assets/images/M-logo.png"
                 alt="logo"
               />
-              <ul class="list-none mt-6">
-                <li class="flex justify-center">
-                  <button
-                    type="button"
-                    class="text-gray-400 dark:text-[#23a455] bg-green-100 hover:bg-green-100 dark:text-[#23a455] dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-3"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      class="h-5 w-5"
-                      height="1em"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="1.5"
-                        d="M8.557 2.75H4.682A1.932 1.932 0 0 0 2.75 4.682v3.875a1.942 1.942 0 0 0 1.932 1.942h3.875a1.942 1.942 0 0 0 1.942-1.942V4.682A1.942 1.942 0 0 0 8.557 2.75m10.761 0h-3.875a1.942 1.942 0 0 0-1.942 1.932v3.875a1.943 1.943 0 0 0 1.942 1.942h3.875a1.942 1.942 0 0 0 1.932-1.942V4.682a1.932 1.932 0 0 0-1.932-1.932m0 10.75h-3.875a1.942 1.942 0 0 0-1.942 1.933v3.875a1.942 1.942 0 0 0 1.942 1.942h3.875a1.942 1.942 0 0 0 1.932-1.942v-3.875a1.932 1.932 0 0 0-1.932-1.932M8.557 13.5H4.682a1.943 1.943 0 0 0-1.932 1.943v3.875a1.932 1.932 0 0 0 1.932 1.932h3.875a1.942 1.942 0 0 0 1.942-1.932v-3.875a1.942 1.942 0 0 0-1.942-1.942"
-                      />
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="w-52 border-e border-gray-100 dark:border-gray-700 space-y-300 ps-6"
-              id="sidebar-multi-level-sidebar2"
-            >
-              <h1
-                class="text-gray-700 dark:text-white font-medium text-xl mt-6"
-              >
-                SpinID
-              </h1>
-              <h1 class="text-gray-400 mt-6 mb-3 font-regular">Home</h1>
-              <h1 class="text-gray-400 font-regular">Analytics</h1>
-            </div>
-          </div>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
         </div>
-      </aside>
-
-      <div class="sm:ml-72 bg-green-50 dark:bg-gray-900" id="main-content">
-        <div class="py-4 mx-auto max-w-screen-2xl px-4 md:px-8">
+        <div
+          class="w-48 flex justify-center py-3 dark:bg-gray-800 border-e border-gray-200 dark:border-gray-600"
+        >
+          <p>12345</p>
+        </div>
+      </div>
+      <div class="w-full bg-green-50 dark:bg-gray-900">
+        <div class="mx-auto max-w-screen-2xl py-4 px-4 md:px-8">
           <div class="flex justify-between">
-            <div class="flex">
-              <button
-                class="lg:hidden md:hidden text-[#23a455] mt-0.5 me-3"
-                data-drawer-target="sidebar-multi-level-sidebar"
-                data-drawer-toggle="sidebar-multi-level-sidebar"
-                aria-controls="sidebar-multi-level-sidebar"
-                type="button"
-              >
+            <div class="flex space-x-3">
+              <div class="text-[#23a455] mt-0.5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1em"
@@ -86,44 +46,7 @@
                     color="currentColor"
                   />
                 </svg>
-              </button>
-              <button
-                class="hidden lg:block md:block text-[#23a455] mt-0.5 me-3"
-                @click="toggle_aside()"
-                type="button"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  class="h-7 w-7"
-                  v-if="toggled_main"
-                  height="1em"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    fill="currentColor"
-                    d="m19.03 4.28l-11 11l-.686.72l.687.72l11 11l1.44-1.44L10.187 16l10.28-10.28z"
-                  />
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  v-else
-                  class="h-7 w-7"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M4 5h12M4 12h16M4 19h8"
-                    color="currentColor"
-                  />
-                </svg>
-              </button>
+              </div>
               <h1 class="text-2xl text-gray-900 dark:text-white">Dashboard</h1>
             </div>
             <div class="flex space-x-3">
@@ -447,11 +370,6 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      toggled_main: true,
-    };
-  },
   mounted() {
     if (
       localStorage.getItem("color-theme") === "dark" ||
@@ -479,27 +397,6 @@ export default {
     }
   },
   methods: {
-    toggle_aside() {
-      let aside = document.getElementById("sidebar-multi-level-sidebar2");
-      let mainaside = document.getElementById("sidebar-multi-level-sidebar");
-      let mainContent = document.getElementById("main-content");
-      if (aside.classList.contains("hidden")) {
-        aside.classList.remove("hidden");
-        mainaside.classList.remove("w-20");
-        mainaside.classList.add("w-72");
-        mainContent.classList.remove("sm:ml-20");
-        mainContent.classList.add("sm:ml-72");
-
-        this.toggled_main = true;
-      } else {
-        aside.classList.add("hidden");
-        mainaside.classList.remove("w-72");
-        mainaside.classList.add("w-20");
-        mainContent.classList.remove("sm:ml-72");
-        mainContent.classList.add("sm:ml-20");
-        this.toggled_main = false;
-      }
-    },
     toggle_light_mode() {
       var themeToggleDarkIcon = document.getElementById(
         "theme-toggle-dark-icon"
