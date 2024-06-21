@@ -6,21 +6,28 @@
         class="fixed top-0 left-0 z-40 w-72 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
-        <div class="h-full overflow-y-auto bg-white dark:bg-gray-800">
-          <div class="flex flex-row">
-            <div
-              class="w-20 h-screen border-e border-gray-100 dark:border-gray-700"
-            >
-              <img
-                class="w-12 h-12 mx-auto mt-3"
-                src="/assets/images/M-logo.png"
-                alt="logo"
-              />
+        <div class="h-screen w-full overflow-y-auto bg-white dark:bg-gray-800">
+          <div class="px-8 py-3">
+            <div>
+              <div class="flex flex-row">
+                <img
+                  class="w-12 h-12 me-6"
+                  src="/assets/images/M-logo.png"
+                  alt="logo"
+                />
+                <h1
+                  class="text-gray-700 dark:text-white font-medium text-xl mt-3"
+                >
+                  SpinID
+                </h1>
+              </div>
+
               <ul class="list-none mt-6">
-                <li class="flex justify-center">
+                <li class="flex flex-row">
                   <button
                     type="button"
-                    class="text-gray-400 dark:text-[#23a455] bg-green-100 hover:bg-green-100 dark:text-[#23a455] dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-3"
+                    @click="toggle_aside()"
+                    class="text-gray-400 dark:text-[#23a455] me-6 bg-green-50 hover:bg-green-100 dark:text-[#23a455] dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -39,20 +46,38 @@
                       />
                     </svg>
                   </button>
+                  <h1 class="text-gray-500 dark:text-gray-400 font-regular p-2">
+                    Home
+                  </h1>
+                </li>
+                <li class="flex flex-row">
+                  <button
+                    type="button"
+                    @click="toggle_aside()"
+                    class="text-gray-400 dark:text-[#23a455] me-6 focus:bg-green-50 focus:bg-green-100 dark:focus:text-[#23a455] dark:focus:bg-gray-600 dark:focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      class="h-5 w-5"
+                      viewBox="0 0 512 512"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M245.151 168a88 88 0 1 0 88 88a88.1 88.1 0 0 0-88-88m0 144a56 56 0 1 1 56-56a56.063 56.063 0 0 1-56 56"
+                      />
+                      <path
+                        fill="currentColor"
+                        d="m464.7 322.319l-31.77-26.153a193.081 193.081 0 0 0 0-80.332l31.77-26.153a19.941 19.941 0 0 0 4.606-25.439l-32.612-56.483a19.936 19.936 0 0 0-24.337-8.73l-38.561 14.447a192.038 192.038 0 0 0-69.54-40.192l-6.766-40.571A19.936 19.936 0 0 0 277.762 16H212.54a19.937 19.937 0 0 0-19.728 16.712l-6.762 40.572a192.03 192.03 0 0 0-69.54 40.192L77.945 99.027a19.937 19.937 0 0 0-24.334 8.731L21 164.245a19.94 19.94 0 0 0 4.61 25.438l31.767 26.151a193.081 193.081 0 0 0 0 80.332l-31.77 26.153A19.942 19.942 0 0 0 21 347.758l32.612 56.483a19.937 19.937 0 0 0 24.337 8.73l38.562-14.447a192.03 192.03 0 0 0 69.54 40.192l6.762 40.571A19.937 19.937 0 0 0 212.54 496h65.222a19.936 19.936 0 0 0 19.728-16.712l6.763-40.572a192.038 192.038 0 0 0 69.54-40.192l38.564 14.449a19.938 19.938 0 0 0 24.334-8.731l32.609-56.487a19.939 19.939 0 0 0-4.6-25.436m-50.636 57.12l-48.109-18.024l-7.285 7.334a159.955 159.955 0 0 1-72.625 41.973l-10 2.636L267.6 464h-44.89l-8.442-50.642l-10-2.636a159.955 159.955 0 0 1-72.625-41.973l-7.285-7.334l-48.117 18.024L53.8 340.562l39.629-32.624l-2.7-9.973a160.9 160.9 0 0 1 0-83.93l2.7-9.972L53.8 171.439l22.446-38.878l48.109 18.024l7.285-7.334a159.955 159.955 0 0 1 72.625-41.973l10-2.636L222.706 48H267.6l8.442 50.642l10 2.636a159.955 159.955 0 0 1 72.625 41.973l7.285 7.334l48.109-18.024l22.447 38.877l-39.629 32.625l2.7 9.972a160.9 160.9 0 0 1 0 83.93l-2.7 9.973l39.629 32.623Z"
+                      />
+                    </svg>
+                  </button>
+                  <h1 class="text-gray-500 dark:text-gray-400 font-regular p-2">
+                    Settings
+                  </h1>
                 </li>
               </ul>
-            </div>
-            <div
-              class="w-52 border-e border-gray-100 dark:border-gray-700 space-y-300 ps-6"
-              id="sidebar-multi-level-sidebar2"
-            >
-              <h1
-                class="text-gray-700 dark:text-white font-medium text-xl mt-6"
-              >
-                SpinID
-              </h1>
-              <h1 class="text-gray-400 mt-6 mb-3 font-regular">Home</h1>
-              <h1 class="text-gray-400 font-regular">Analytics</h1>
             </div>
           </div>
         </div>
@@ -124,7 +149,9 @@
                   />
                 </svg>
               </button>
-              <h1 class="text-2xl text-gray-900 dark:text-white">Dashboard</h1>
+              <h1 class="text-2xl text-gray-900 dark:text-white mt-1">
+                Dashboard
+              </h1>
             </div>
             <div class="flex space-x-3">
               <div>
@@ -428,7 +455,7 @@
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="/auth/login"
                         class="mt-2 block px-4 py-2 bg-green-100 hover:bg-green-100 dark:bg-[#23a455] dark:hover:text-white text-center rounded-lg"
                         >Sign out</a
                       >
@@ -480,23 +507,15 @@ export default {
   },
   methods: {
     toggle_aside() {
-      let aside = document.getElementById("sidebar-multi-level-sidebar2");
-      let mainaside = document.getElementById("sidebar-multi-level-sidebar");
+      let aside = document.getElementById("sidebar-multi-level-sidebar");
       let mainContent = document.getElementById("main-content");
       if (aside.classList.contains("hidden")) {
         aside.classList.remove("hidden");
-        mainaside.classList.remove("w-20");
-        mainaside.classList.add("w-72");
-        mainContent.classList.remove("sm:ml-20");
         mainContent.classList.add("sm:ml-72");
-
         this.toggled_main = true;
       } else {
         aside.classList.add("hidden");
-        mainaside.classList.remove("w-72");
-        mainaside.classList.add("w-20");
         mainContent.classList.remove("sm:ml-72");
-        mainContent.classList.add("sm:ml-20");
         this.toggled_main = false;
       }
     },
