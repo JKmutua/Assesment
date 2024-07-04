@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute max-w-screen-xl mx-auto left-0 right-0 w-full z-20 bg-green-50 dark:bg-gray-900 p-4 flex justify-between"
+    class="absolute max-w-screen-xl mx-auto left-0 right-0 w-full z-20 bg-transparent dark:bg-transparent p-4 flex justify-between"
   >
     <a
       href="https://www.spinmobile.co/"

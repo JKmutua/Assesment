@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen h-full py-6 sm:py-8 lg:py-12">
-    <!-- <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
       <div
         class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12"
       >
@@ -49,7 +49,7 @@
             >VR</span
           >
         </a>
-      
+
         <a
           href="#"
           class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80"
@@ -70,7 +70,7 @@
             >Tech</span
           >
         </a>
-       
+
         <a
           href="#"
           class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80"
@@ -91,7 +91,7 @@
             >Dev</span
           >
         </a>
-        
+
         <a
           href="#"
           class="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
@@ -112,8 +112,13 @@
             >Retro</span
           >
         </a>
-       
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+// definePageMeta({
+//   middleware: "auth.global", // this should match the name of the file inside the middleware directory
+// });
+</script>

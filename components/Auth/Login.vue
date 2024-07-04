@@ -184,7 +184,6 @@
                   id="password"
                   placeholder="password"
                   class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                  required=""
                 />
                 <span
                   class="-ml-8 text-gray-500 dark:text-gray-400"
@@ -238,7 +237,6 @@
                     aria-describedby="remember"
                     type="checkbox"
                     class="w-4 h-4 border border-gray-300 rounded bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
-                    required=""
                   />
                 </div>
                 <div class="ml-3 text-sm">
@@ -255,7 +253,7 @@
             </div>
             <button
               type="submit"
-              @click="$router.push('/')"
+              @click.prevent="login"
               class="w-full text-white bg-[#23a455] hover:bg-[#008100] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               Sign in
@@ -276,7 +274,28 @@
     </div>
   </section>
 </template>
-<script setup>
+<script lang="ts" setup>
 import { ref } from "vue";
 const see_password = ref(false);
+const token = ref(useCookie("token"));
+import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
+import { useAuthStore } from "~/store/auth"; // import the auth store we just created
+
+const { authenticateUser } = useAuthStore(); // use authenticateUser action from  auth store
+const { profileUser } = useAuthStore(); // use authenticateUser action from  auth store
+
+const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
+
+const user = ref({
+  phone_number: "254797270912",
+  password: "9yqQ;A",
+});
+const router = useRouter();
+const login = async () => {
+  await authenticateUser(user.value); // call authenticateUser and pass the user object
+  // redirect to homepage if user is authenticated
+  if (authenticated) {
+    router.push("/auth/verify");
+  }
+};
 </script>

@@ -23,11 +23,14 @@
               </div>
 
               <ul class="list-none mt-6">
-                <li class="flex flex-row">
+                <li
+                  role="button"
+                  class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                >
                   <button
                     type="button"
                     @click="toggle_aside()"
-                    class="text-gray-400 dark:text-[#23a455] me-6 bg-green-50 hover:bg-green-100 dark:text-[#23a455] dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2"
+                    class="text-gray-400 dark:text-[#23a455] ms-1 me-6 text-sm p-2"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -50,11 +53,14 @@
                     Home
                   </h1>
                 </li>
-                <li class="flex flex-row">
+                <li
+                  role="button"
+                  class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                >
                   <button
                     type="button"
                     @click="toggle_aside()"
-                    class="text-gray-400 dark:text-[#23a455] me-6 focus:bg-green-50 focus:bg-green-100 dark:focus:text-[#23a455] dark:focus:bg-gray-600 dark:focus:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2"
+                    class="text-gray-400 dark:text-[#23a455] ms-1 me-6 text-sm p-2"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -453,12 +459,12 @@
                         >Manage Account</a
                       >
                     </li>
-                    <li>
-                      <a
-                        href="/auth/login"
-                        class="mt-2 block px-4 py-2 bg-green-100 hover:bg-green-100 dark:bg-[#23a455] dark:hover:text-white text-center rounded-lg"
-                        >Sign out</a
+                    <li @click="logout" role="button">
+                      <p
+                        class="mt-2 block px-4 py-2 bg-green-100 hover:bg-green-100 dark:bg-[#23a455] dark:hover:text-white dark:hover:bg-[#23a455] text-center rounded-lg"
                       >
+                        Sign out
+                      </p>
                     </li>
                   </ul>
                 </div>
@@ -472,85 +478,81 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      toggled_main: true,
-    };
-  },
-  mounted() {
-    if (
-      localStorage.getItem("color-theme") === "dark" ||
-      (!("color-theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
+<script setup>
+const token = ref(useCookie("token"));
+import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
+import { useAuthStore } from "~/store/auth"; // import the auth store we just created
+const { logUserOut } = useAuthStore(); // use authenticateUser action from  auth store
+const router = useRouter();
+const logout = () => {
+  logUserOut();
+  router.push("/login");
+};
+onMounted(() => {
+  if (
+    localStorage.getItem("color-theme") === "dark" ||
+    (!("color-theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+  var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+  var themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+
+  // Change the icons inside the button based on previous settings
+  if (
+    localStorage.getItem("color-theme") === "dark" ||
+    (!("color-theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    themeToggleLightIcon.classList.remove("hidden");
+  } else {
+    themeToggleDarkIcon.classList.remove("hidden");
+  }
+});
+const toggled_main = ref(true);
+function toggle_aside() {
+  let aside = document.getElementById("sidebar-multi-level-sidebar");
+  let mainContent = document.getElementById("main-content");
+  if (aside.classList.contains("hidden")) {
+    aside.classList.remove("hidden");
+    mainContent.classList.add("sm:ml-72");
+    this.toggled_main = true;
+  } else {
+    aside.classList.add("hidden");
+    mainContent.classList.remove("sm:ml-72");
+    this.toggled_main = false;
+  }
+}
+
+function toggle_light_mode() {
+  var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+  var themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+  var themeToggleBtn = document.getElementById("theme-toggle");
+  themeToggleDarkIcon.classList.toggle("hidden");
+  themeToggleLightIcon.classList.toggle("hidden");
+
+  // if set via local storage previously
+  if (localStorage.getItem("color-theme")) {
+    if (localStorage.getItem("color-theme") === "light") {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-theme", "light");
     }
-    var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
-    var themeToggleLightIcon = document.getElementById(
-      "theme-toggle-light-icon"
-    );
 
-    // Change the icons inside the button based on previous settings
-    if (
-      localStorage.getItem("color-theme") === "dark" ||
-      (!("color-theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      themeToggleLightIcon.classList.remove("hidden");
+    // if NOT set via local storage previously
+  } else {
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-theme", "light");
     } else {
-      themeToggleDarkIcon.classList.remove("hidden");
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
     }
-  },
-  methods: {
-    toggle_aside() {
-      let aside = document.getElementById("sidebar-multi-level-sidebar");
-      let mainContent = document.getElementById("main-content");
-      if (aside.classList.contains("hidden")) {
-        aside.classList.remove("hidden");
-        mainContent.classList.add("sm:ml-72");
-        this.toggled_main = true;
-      } else {
-        aside.classList.add("hidden");
-        mainContent.classList.remove("sm:ml-72");
-        this.toggled_main = false;
-      }
-    },
-    toggle_light_mode() {
-      var themeToggleDarkIcon = document.getElementById(
-        "theme-toggle-dark-icon"
-      );
-      var themeToggleLightIcon = document.getElementById(
-        "theme-toggle-light-icon"
-      );
-      var themeToggleBtn = document.getElementById("theme-toggle");
-      themeToggleDarkIcon.classList.toggle("hidden");
-      themeToggleLightIcon.classList.toggle("hidden");
-
-      // if set via local storage previously
-      if (localStorage.getItem("color-theme")) {
-        if (localStorage.getItem("color-theme") === "light") {
-          document.documentElement.classList.add("dark");
-          localStorage.setItem("color-theme", "dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-          localStorage.setItem("color-theme", "light");
-        }
-
-        // if NOT set via local storage previously
-      } else {
-        if (document.documentElement.classList.contains("dark")) {
-          document.documentElement.classList.remove("dark");
-          localStorage.setItem("color-theme", "light");
-        } else {
-          document.documentElement.classList.add("dark");
-          localStorage.setItem("color-theme", "dark");
-        }
-      }
-    },
-  },
-};
+  }
+}
 </script>

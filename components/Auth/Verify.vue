@@ -8,7 +8,7 @@
           <h1
             class="text-xl -mb-3 font-bold text-center leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
           >
-            Hello Justus
+            Hello Justus {{ verified }}
           </h1>
           <p class="text-sm text-center font-medium text-gray-400">
             Please input the verification code below
@@ -18,10 +18,10 @@
               <input
                 type="password"
                 name="password"
+                v-model="user.otp"
                 id="password"
-                placeholder="password"
+                placeholder="otp"
                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                required=""
               />
               <span
                 class="-ml-8 text-gray-500 dark:text-gray-400"
@@ -69,6 +69,7 @@
 
             <button
               type="submit"
+              @click.prevent="verify()"
               class="w-full text-white bg-[#23a455] hover:bg-[#008100] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               Verify
@@ -96,7 +97,29 @@
     </div>
   </section>
 </template>
-<script setup>
+
+<script lang="ts" setup>
 import { ref } from "vue";
 const see_password = ref(false);
+const token = ref(useCookie("token"));
+import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
+import { useAuthStore } from "~/store/auth"; // import the auth store we just created
+
+const { verifyUser } = useAuthStore(); // use authenticateUser action from  auth store
+const { profileUser } = useAuthStore(); // use authenticateUser action from  auth store
+
+const { verified } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
+
+const user = ref({
+  otp: "",
+});
+const router = useRouter();
+const verify = async () => {
+  await verifyUser(user.value); // call verifyUser and pass the user object
+  // redirect to homepage if user is verified
+  if (verified) {
+    await profileUser();
+    router.push("/");
+  }
+};
 </script>
