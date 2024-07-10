@@ -108,10 +108,15 @@ export const useAuthStore = defineStore("auth", {
           },
         }
       );
-      // const token = useCookie("token"); // useCookie new hook in nuxt 3
-      this.authenticated = false; // set authenticated  state value to false
-      this.verified = false;
-      token.value = null; // clear the token cookie
+      const router = useRouter();
+      if (data.value.code == "200.000.000") {
+        this.authenticated = false; // set authenticated  state value to false
+        this.verified = false;
+        token.value = null; // clear the token cookie
+        this.user_id = "";
+        this.auth_user = {};
+        router.push("/auth/login");
+      }
     },
   },
   getters: {
