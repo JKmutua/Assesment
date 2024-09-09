@@ -1,20 +1,77 @@
 <template>
   <div class="h-svh py-3 sm:py-8 lg:py-8">
-    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <div class="mx-auto max-w-screen-xl px-4">
       <div
         class="border-b border-gray-300 dark:border-gray-700 border-dashed pb-6"
       >
-        <div
-          class="text-2xl mb-1 font-semibold text-gray-700 dark:text-gray-400 space-x-1 rtl:space-x-reverse"
-        >
-          User Support
+        <div class="flex justify-between mb-6">
+          <div class="my-auto">
+            <div
+              class="text-xl font-semibold text-gray-700 dark:text-gray-400 space-x-1 rtl:space-x-reverse"
+            >
+              Get Things Done
+            </div>
+            <p
+              class="-mt-1 font-regular space-x-1 rtl:space-x-reverse text-gray-500 dark:text-gray-400"
+            >
+              <small>Handling user Support issues</small>
+            </p>
+          </div>
+          <div class="flex my-auto mb-2">
+            <button
+              class="bg-white me-2 text-sm font-regular py-2 px-4 rounded-md border border-gray-300 hover:border-gray-200 dark:text-white dark:border-gray-500 dark:hover:border-gray-600 dark:bg-gray-700"
+            >
+              <span class="me-2">All Issues</span>
+            </button>
+            <button
+              class="text-white bg-[#23a455] text-sm hover:bg-opacity-90 font-regular py-2 px-4 rounded-md"
+            >
+              <span class="me-2">Report Issue</span>
+            </button>
+          </div>
         </div>
-        <p
-          class="mb-3 font-regular space-x-1 rtl:space-x-reverse text-gray-500 dark:text-gray-400"
-        >
-          Handling user Support issues
-        </p>
         <div class="grid grid-cols-3 gap-4">
+          <div class="relative">
+            <div
+              class="z-20 absolute w-full animate-pulse p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[#23a455] bg-opacity-70"
+            >
+              <div class="mb-3">
+                <h1 class="text-white text-3xl font-bold">72</h1>
+                <p class="text-sm font-medium text-white">
+                  <small>Pending Issues</small>
+                </p>
+              </div>
+              <div class="flex justify-between">
+                <div class="font-medium text-white">
+                  <small>30 Resolved</small>
+                </div>
+                <div class="font-medium text-white"><small>72%</small></div>
+              </div>
+              <div class="w-full bg-white rounded-full h-2 bg-opacity-30">
+                <div class="bg-white h-2 rounded-full" style="width: 72%"></div>
+              </div>
+            </div>
+            <div
+              class="absolute w-full p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[url('/assets/images/mt.jpg')]"
+            >
+              <div class="mb-3">
+                <h1 class="text-white text-3xl font-bold">72</h1>
+                <p class="text-sm font-medium text-white">
+                  <small>Pending Issues</small>
+                </p>
+              </div>
+              <div class="flex justify-between">
+                <div class="font-medium text-white">
+                  <small>30 Resolved</small>
+                </div>
+                <div class="font-medium text-white"><small>72%</small></div>
+              </div>
+              <div class="w-full bg-white rounded-full h-2 bg-opacity-30">
+                <div class="bg-white h-2 rounded-full" style="width: 72%"></div>
+              </div>
+            </div>
+          </div>
+
           <div
             class="relative p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
           >
@@ -51,8 +108,9 @@
               </div>
 
               <div class="flex items-center space-x-1">
-                <button
-                  class="flex text-[#23a455] dark:text-[#23a455] bg-[#23a455] text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded-lg"
+                <NuxtLink
+                  to="/data/customers"
+                  class="flex text-[#23a455] dark:text-[#23a455] bg-[#23a455] text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded"
                 >
                   <span class="me-2">View</span>
                   <svg
@@ -67,9 +125,9 @@
                       d="M247.31 124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57 61.26 162.88 48 128 48S61.43 61.26 36.34 86.35C17.51 105.18 9 124 8.69 124.76a8 8 0 0 0 0 6.5c.35.79 8.82 19.57 27.65 38.4C61.43 194.74 93.12 208 128 208s66.57-13.26 91.66-38.34c18.83-18.83 27.3-37.61 27.65-38.4a8 8 0 0 0 0-6.5M128 192c-30.78 0-57.67-11.19-79.93-33.25A133.5 133.5 0 0 1 25 128a133.3 133.3 0 0 1 23.07-30.75C70.33 75.19 97.22 64 128 64s57.67 11.19 79.93 33.25A133.5 133.5 0 0 1 231.05 128c-7.21 13.46-38.62 64-103.05 64m0-112a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32"
                     />
                   </svg>
-                </button>
+                </NuxtLink>
                 <button
-                  class="flex text-[#23a455] dark:text-[#23a455] bg-[#23a455] text-sm bg-opacity-20 font-medium py-1.5 px-4 rounded-lg"
+                  class="flex text-[#23a455] dark:text-[#23a455] bg-[#23a455] text-sm bg-opacity-20 font-medium py-1.5 px-4 rounded"
                 >
                   <span class="me-2">Create</span>
                   <svg
@@ -126,8 +184,9 @@
               </div>
 
               <div class="flex items-center space-x-1">
-                <button
-                  class="flex text-yellow-400 dark:text-yellow-500 bg-yellow-400 text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded-lg"
+                <NuxtLink
+                  to="/data/budgets"
+                  class="flex text-yellow-400 dark:text-yellow-500 bg-yellow-400 text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded"
                 >
                   <span class="me-2">View</span>
                   <svg
@@ -142,7 +201,7 @@
                       d="M247.31 124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57 61.26 162.88 48 128 48S61.43 61.26 36.34 86.35C17.51 105.18 9 124 8.69 124.76a8 8 0 0 0 0 6.5c.35.79 8.82 19.57 27.65 38.4C61.43 194.74 93.12 208 128 208s66.57-13.26 91.66-38.34c18.83-18.83 27.3-37.61 27.65-38.4a8 8 0 0 0 0-6.5M128 192c-30.78 0-57.67-11.19-79.93-33.25A133.5 133.5 0 0 1 25 128a133.3 133.3 0 0 1 23.07-30.75C70.33 75.19 97.22 64 128 64s57.67 11.19 79.93 33.25A133.5 133.5 0 0 1 231.05 128c-7.21 13.46-38.62 64-103.05 64m0-112a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32"
                     />
                   </svg>
-                </button>
+                </NuxtLink>
               </div>
             </div>
           </div>
@@ -198,7 +257,7 @@
 
               <div class="flex items-center space-x-1">
                 <button
-                  class="flex text-red-500 dark:text-red-500 bg-red-500 text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded-lg"
+                  class="flex text-red-500 dark:text-red-500 bg-red-500 text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded"
                 >
                   <span class="me-2">View</span>
                   <svg
@@ -259,7 +318,7 @@
 
               <div class="flex items-center space-x-1">
                 <button
-                  class="flex text-[#23a455] dark:text-[#23a455] bg-[#23a455] text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded-lg"
+                  class="flex text-[#23a455] dark:text-[#23a455] bg-[#23a455] text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded"
                 >
                   <span class="me-2">View</span>
                   <svg
@@ -316,7 +375,7 @@
 
               <div class="flex items-center space-x-1">
                 <button
-                  class="flex text-yellow-400 dark:text-yellow-500 bg-yellow-400 text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded-lg"
+                  class="flex text-yellow-400 dark:text-yellow-500 bg-yellow-400 text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded"
                 >
                   <span class="me-2">View</span>
                   <svg
@@ -344,9 +403,9 @@
           Administration
         </div>
         <p
-          class="mb-3 font-regular space-x-1 rtl:space-x-reverse text-gray-500 dark:text-gray-400"
+          class="mb-3 -mt-1 font-regular space-x-1 rtl:space-x-reverse text-gray-500 dark:text-gray-400"
         >
-          System access & reports
+          <small>System access & reports</small>
         </p>
         <div class="grid grid-cols-3 gap-4">
           <div
@@ -390,7 +449,7 @@
 
               <div class="flex items-center space-x-1">
                 <button
-                  class="flex text-[#23a455] dark:text-[#23a455] bg-[#23a455] text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded-lg"
+                  class="flex text-[#23a455] dark:text-[#23a455] bg-[#23a455] text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded"
                 >
                   <span class="me-2">View</span>
                   <svg
@@ -407,7 +466,7 @@
                   </svg>
                 </button>
                 <button
-                  class="flex text-[#23a455] dark:text-[#23a455] bg-[#23a455] text-sm bg-opacity-20 font-medium py-1.5 px-4 rounded-lg"
+                  class="flex text-[#23a455] dark:text-[#23a455] bg-[#23a455] text-sm bg-opacity-20 font-medium py-1.5 px-4 rounded"
                 >
                   <span class="me-2">Create</span>
                   <svg
@@ -468,7 +527,7 @@
 
               <div class="flex items-center space-x-1">
                 <button
-                  class="flex text-yellow-400 dark:text-yellow-500 bg-yellow-400 text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded-lg"
+                  class="flex text-yellow-400 dark:text-yellow-500 bg-yellow-400 text-sm bg-opacity-20 me-2 font-medium py-1.5 px-4 rounded"
                 >
                   <span class="me-2">Generate</span>
                   <svg

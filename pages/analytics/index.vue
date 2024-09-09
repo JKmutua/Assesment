@@ -1,11 +1,16 @@
 <template>
   <div class="h-full py-3 sm:py-8 lg:py-8">
-    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <div class="mx-auto max-w-screen-xl px-4">
+      <!-- <div>
+        <h1 class="text-2xl text-gray-900 dark:text-white mt-0.5">
+          <span v-if="$route.path == '/'">Analytics</span>
+        </h1>
+      </div> -->
       <div class="grid grid-cols-4 gap-4">
         <div class="col-span-3">
           <div class="grid grid-cols-3 gap-4">
             <div
-              class="relative p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+              class="relative p-6 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
             >
               <div class="absolute right-0 top-0 mt-6 me-1">
                 <button
@@ -62,7 +67,7 @@
             </div>
 
             <div
-              class="relative p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+              class="relative p-6 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
             >
               <div class="absolute right-0 top-0 mt-6 me-1">
                 <button
@@ -120,7 +125,7 @@
             </div>
 
             <div
-              class="relative p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+              class="relative p-6 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
             >
               <div class="absolute right-0 top-0 mt-6 me-1">
                 <button
@@ -191,7 +196,7 @@
             </div>
           </div>
           <div
-            class="mt-4 p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+            class="mt-4 p-6 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
           >
             <div class="flex flex-1 me-1">
               <div>
@@ -223,17 +228,56 @@
             <div id="chart">
               <apexchart
                 type="area"
-                height="380"
+                height="300"
                 :options="options2"
                 :series="series2"
               ></apexchart>
+            </div>
+          </div>
+          <div
+            class="mt-4 p-6 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+          >
+            <div class="flex flex-1 me-1">
+              <div>
+                <button
+                  type="button"
+                  class="text-yellow-400 dark:text-yellow-400 bg-yellow-400 bg-opacity-20 me-3 dark:bg-yellow-400 dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M4.5 3.75a.75.75 0 0 0-1.5 0v14A3.25 3.25 0 0 0 6.25 21h14a.75.75 0 0 0 0-1.5h-14a1.75 1.75 0 0 1-1.75-1.75zM14.75 6a.75.75 0 0 0 0 1.5h3.19l-4.69 4.69l-1.97-1.97a.75.75 0 0 0-1.06 0l-3.75 3.75a.75.75 0 1 0 1.06 1.06l3.22-3.22l1.97 1.97a.75.75 0 0 0 1.06 0l5.222-5.22v3.195a.75.75 0 0 0 1.5 0V6.75a.75.75 0 0 0-.75-.75z"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                class="flex flex-col text-sm text-gray-500 dark:text-gray-400"
+              >
+                <span class="">Pending Support Issues</span>
+                <small class="font-regular">Refresh to update</small>
+              </div>
+            </div>
+            <div id="chart">
+              <!-- <apexchart
+                type="area"
+                height="300"
+                :options="options2"
+                :series="series2"
+              ></apexchart> -->
             </div>
           </div>
         </div>
 
         <div class="col-span-1">
           <div
-            class="relative p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+            class="relative p-6 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
           >
             <div class="flex flex-1 me-1">
               <div>
@@ -266,7 +310,7 @@
               <div id="chart">
                 <apexchart
                   type="donut"
-                  width="380"
+                  width="300"
                   :options="options"
                   :series="series"
                   :colors="colors"
@@ -294,7 +338,7 @@
           </div>
 
           <div
-            class="relative p-6 mt-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+            class="relative p-6 mt-4 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
           >
             <div class="flex flex-1 me-1">
               <div>
@@ -327,7 +371,7 @@
               <div id="chart">
                 <apexchart
                   type="donut"
-                  width="380"
+                  width="300"
                   :options="options"
                   :series="series"
                 ></apexchart>
@@ -379,6 +423,8 @@ const options2 = ref({
   },
 
   grid: {
+    show: true,
+    theme: "light",
     padding: {
       left: 0,
       right: 0,
@@ -409,29 +455,41 @@ const options2 = ref({
     ],
   },
   tooltip: {
+    theme: "dark",
     x: {
       format: "dd/MM/yy HH:mm",
     },
   },
 });
-const series = ref([44, 55, 13, 33]);
-const colors = ref(["#23a455", "#eab308", "#ef4444", "#0ea5e9"]);
+const series = ref([15, 44]);
+const colors = ref(["#0ea5e9", "#008000", "#eab308", "#ef4444"]);
 const options = ref({
+  plotOptions: {
+    pie: {
+      donut: {
+        size: "80%",
+      },
+    },
+  },
   chart: {
-    width: 380,
+    width: 150,
     type: "donut",
   },
   // colors: ["#23a455", "#eab308", "#ef4444", "#0ea5e9"],
   dataLabels: {
     enabled: false,
   },
+  stroke: {
+    show: true,
+    width: 2,
+    colors: ["transparent"],
+  },
   responsive: [
     {
       breakpoint: 480,
       options: {
-        colors: ["#23a455"],
         chart: {
-          width: 200,
+          width: 100,
         },
         legend: {
           show: false,
@@ -444,5 +502,6 @@ const options = ref({
     offsetY: 0,
     height: 20,
   },
+  colors: ["#e5e7eb", "#23a455"],
 });
 </script>

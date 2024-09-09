@@ -1,9 +1,34 @@
 <template>
   <div class="bg-white dark:bg-gray-900">
     <div class="">
+      <div class="hidden lg:block absolute top-0">
+        <div class="z-50 flex fixed">
+          <svg width="300" height="9" class="text-green-500">
+            <line
+              stroke-width="5px"
+              x1="0"
+              y1="0"
+              x2="350"
+              y2="0"
+              stroke="#23a455"
+            />
+          </svg>
+          <svg width="250" height="9" class="text-green-500">
+            <line
+              stroke-width="5px"
+              x1="0"
+              y1="0"
+              x2="350"
+              y2="0"
+              stroke="#23a455"
+            />
+          </svg>
+        </div>
+      </div>
+
       <aside
         id="sidebar-multi-level-sidebar"
-        class="fixed top-0 left-0 z-40 w-60 transition-transform -translate-x-full sm:translate-x-0"
+        class="fixed top-0 left-0 z-40 w-60 transition-transform -translate-x-full sm:translate-x-0 border-e border-gray-200 dark:border-gray-700"
         aria-label="Sidebar"
       >
         <div
@@ -33,14 +58,15 @@
               <NuxtLink
                 to="/"
                 role="button"
-                class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
-                <button
+                <span
                   type="button"
-                  class="text-gray-400 dark:text-[#23a455] ms-1 me-2 text-sm p-2"
+                  class="dark:text-[#23a455] ms-1 me-2 text-sm p-2"
                 >
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/svg"                                                                                                                                                                                            
                     width="1em"
                     class="h-5 w-5"
                     height="1em"
@@ -55,21 +81,20 @@
                       d="M8.557 2.75H4.682A1.932 1.932 0 0 0 2.75 4.682v3.875a1.942 1.942 0 0 0 1.932 1.942h3.875a1.942 1.942 0 0 0 1.942-1.942V4.682A1.942 1.942 0 0 0 8.557 2.75m10.761 0h-3.875a1.942 1.942 0 0 0-1.942 1.932v3.875a1.943 1.943 0 0 0 1.942 1.942h3.875a1.942 1.942 0 0 0 1.932-1.942V4.682a1.932 1.932 0 0 0-1.932-1.932m0 10.75h-3.875a1.942 1.942 0 0 0-1.942 1.933v3.875a1.942 1.942 0 0 0 1.942 1.942h3.875a1.942 1.942 0 0 0 1.932-1.942v-3.875a1.932 1.932 0 0 0-1.932-1.932M8.557 13.5H4.682a1.943 1.943 0 0 0-1.932 1.943v3.875a1.932 1.932 0 0 0 1.932 1.932h3.875a1.942 1.942 0 0 0 1.942-1.932v-3.875a1.942 1.942 0 0 0-1.942-1.942"
                     />
                   </svg>
-                </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
-                >
+                </span>
+                <small class="dark:text-gray-400 font-regular p-2">
                   Home
                 </small>
               </NuxtLink>
               <NuxtLink
                 to="/analytics"
                 role="button"
-                class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
                   type="button"
-                  class="text-gray-400 dark:text-[#23a455] ms-1 me-2 text-sm p-2"
+                  class="dark:text-[#23a455] ms-1 me-2 text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -88,9 +113,7 @@
                     />
                   </svg>
                 </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
-                >
+                <small class="dark:text-gray-400 font-regular p-2">
                   Analytics
                 </small>
               </NuxtLink>
@@ -106,11 +129,12 @@
               <NuxtLink
                 to="/data/customers"
                 role="button"
-                class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
                   type="button"
-                  class="text-gray-400 dark:text-[#23a455] ms-1 me-2 text-sm p-2"
+                  class="dark:text-[#23a455] ms-1 me-2 text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -125,20 +149,19 @@
                     />
                   </svg>
                 </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
-                >
+                <small class="dark:text-gray-400 font-regular p-2">
                   Customers
                 </small>
               </NuxtLink>
               <NuxtLink
                 to="/data/budgets"
                 role="button"
-                class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
                   type="button"
-                  class="text-gray-400 dark:text-[#23a455] ms-1 me-2 text-sm p-2"
+                  class="dark:text-[#23a455] ms-1 me-2 text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -154,20 +177,19 @@
                     />
                   </svg>
                 </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
-                >
+                <small class="dark:text-gray-400 font-regular p-2">
                   Budgets
                 </small>
               </NuxtLink>
               <NuxtLink
                 to="/data/transactions"
                 role="button"
-                class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
                   type="button"
-                  class="text-gray-400 dark:text-[#23a455] ms-1 me-2 text-sm p-2"
+                  class="dark:text-[#23a455] ms-1 me-2 text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -186,20 +208,19 @@
                     />
                   </svg>
                 </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
-                >
+                <small class="dark:text-gray-400 font-regular p-2">
                   Transactions
                 </small>
               </NuxtLink>
               <NuxtLink
                 to="/data/statements"
                 role="button"
-                class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
                   type="button"
-                  class="text-gray-400 dark:text-[#23a455] ms-1 me-2 text-sm p-2"
+                  class="dark:text-[#23a455] ms-1 me-2 text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -214,20 +235,19 @@
                     />
                   </svg>
                 </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
-                >
+                <small class="dark:text-gray-400 font-regular p-2">
                   Statements
                 </small>
               </NuxtLink>
               <NuxtLink
                 to="/data/goals"
                 role="button"
-                class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
                   type="button"
-                  class="text-gray-400 dark:text-[#23a455] ms-1 me-2 text-sm p-2"
+                  class="dark:text-[#23a455] ms-1 me-2 text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -256,9 +276,7 @@
                     <path fill="none" d="M0 0h36v36H0z" />
                   </svg>
                 </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
-                >
+                <small class="dark:text-gray-400 font-regular p-2">
                   Goals
                 </small>
               </NuxtLink>
@@ -274,11 +292,12 @@
               <NuxtLink
                 to="/admin/users"
                 role="button"
-                class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
                   type="button"
-                  class="text-gray-400 dark:text-[#23a455] ms-1 me-2 text-sm p-2"
+                  class="dark:text-[#23a455] ms-1 me-2 text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -293,16 +312,15 @@
                     />
                   </svg>
                 </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
-                >
+                <small class="dark:text-gray-400 font-regular p-2">
                   Users
                 </small>
               </NuxtLink>
               <NuxtLink
                 to="/data/reports"
                 role="button"
-                class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
                   type="button"
@@ -325,9 +343,7 @@
                     />
                   </svg>
                 </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
-                >
+                <small class="dark:text-gray-400 font-regular p-2">
                   Reports
                 </small>
               </NuxtLink>
@@ -339,12 +355,13 @@
             >
               <NuxtLink
                 role="button"
-                class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
                   type="button"
                   @click="toggle_aside()"
-                  class="text-gray-400 dark:text-[#23a455] ms-1 me-2 text-sm p-2"
+                  class="dark:text-[#23a455] ms-1 me-2 text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -373,19 +390,18 @@
                     <path fill="none" d="M0 0h36v36H0z" />
                   </svg>
                 </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
-                >
+                <small class="dark:text-gray-400 font-regular p-2">
                   Help
                 </small>
               </NuxtLink>
               <NuxtLink
                 role="button"
-                class="flex flex-row hover:bg-green-50 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
                   type="button"
-                  class="text-gray-400 dark:text-[#23a455] ms-1 me-2 text-sm p-2"
+                  class="dark:text-[#23a455] ms-1 me-2 text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -404,15 +420,13 @@
                     />
                   </svg>
                 </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
-                >
+                <small class="dark:text-gray-400 font-regular p-2">
                   Settings
                 </small>
               </NuxtLink>
               <li
                 role="button"
-                class="flex flex-row bg-green-50 hover:bg-green-100 mt-3 dark:text-[#23a455] dark:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg"
+                class="flex flex-row bg-green-50 hover:bg-green-100 mt-3 dark:text-[#23a455] dark:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
                   id="dropdownDefaultButton"
@@ -447,8 +461,8 @@
         </div>
       </aside>
 
-      <div class="sm:ml-60 bg-green-50 dark:bg-gray-900" id="main-content">
-        <div class="py-3 mx-auto max-w-screen-2xl px-4 md:px-8">
+      <div class="sm:ml-60 bg-gray-100 dark:bg-gray-900" id="main-content">
+        <div class="pt-5 mx-auto max-w-screen-xl px-4">
           <div class="flex justify-between">
             <div class="flex">
               <button
@@ -513,8 +527,18 @@
                   />
                 </svg>
               </button>
-              <h1 class="text-2xl text-gray-900 dark:text-white mt-1">
-                Dashboard
+              <h1
+                class="text-2xl text-gray-900 dark:text-white mt-0.5 capitalize"
+              >
+                <span v-if="$route.path == '/'">Dashboard</span>
+                <span v-else>{{
+                  String($route.path)
+                    .split("/")
+                    [String($route.path).split("/").length - 1].replaceAll(
+                      "_",
+                      " "
+                    )
+                }}</span>
               </h1>
             </div>
             <div class="flex space-x-3">
@@ -523,7 +547,7 @@
                   id="theme-toggle"
                   @click="toggle_light_mode()"
                   type="button"
-                  class="text-yellow-400 dark:text-yellow-400 bg-green-100 hover:bg-green-100 dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                  class="text-yellow-400 dark:text-yellow-400 bg-white border border-gray-200 dark:border-gray-700 hover:bg-green-100 dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
                 >
                   <svg
                     id="theme-toggle-dark-icon"
@@ -559,7 +583,7 @@
                   data-dropdown-offset-distance="10"
                   data-dropdown-offset-skidding="50"
                   type="button"
-                  class="text-gray-400 dark:text-[#23a455] bg-green-100 hover:bg-green-100 dark:text-[#23a455] dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                  class="text-gray-400 dark:text-[#23a455] bg-white border border-gray-200 dark:border-gray-700 hover:bg-green-100 dark:text-[#23a455] dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -580,7 +604,7 @@
                 <!-- Dropdown menu -->
                 <div
                   id="dropdownNotification"
-                  class="z-20 hidden w-full max-w-sm bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 dark:divide-gray-700"
+                  class="z-20 hidden w-full max-w-sm bg-white divide-y divide-gray-100 rounded-md shadow dark:bg-gray-800 dark:divide-gray-700"
                   aria-labelledby="dropdownNotificationButton"
                 >
                   <div
@@ -756,7 +780,7 @@
                   data-dropdown-offset-distance="10"
                   data-dropdown-offset-skidding="50"
                   type="button"
-                  class="text-[#23a455] dark:text-[#23a455] bg-green-100 hover:bg-green-100 dark:text-[#23a455] dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                  class="text-[#23a455] dark:text-[#23a455] bg-white border border-gray-200 dark:border-gray-700 hover:bg-green-100 dark:text-[#23a455] dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -773,7 +797,7 @@
                 </button>
                 <div
                   id="dropdown"
-                  class="z-10 hidden bg-white origin-top-right divide-y divide-gray-100 rounded-lg shadow p-3 w-64 dark:bg-gray-700"
+                  class="z-10 hidden bg-white origin-top-right divide-y divide-gray-100 rounded-md shadow p-3 w-64 dark:bg-gray-700"
                 >
                   <ul
                     class="py-2 text-sm text-gray-700 dark:text-gray-200"
@@ -813,13 +837,13 @@
                     <li>
                       <a
                         href="#"
-                        class="mt-4 block px-4 py-2 bg-gray-200 hover:bg-gray-100 dark:bg-gray-600 dark:hover:bg-gray-600 dark:hover:text-white text-center rounded-lg"
+                        class="mt-4 block px-4 py-2 bg-gray-200 hover:bg-gray-100 dark:bg-gray-600 dark:hover:bg-gray-600 dark:hover:text-white text-center rounded-md"
                         >Manage Account</a
                       >
                     </li>
                     <li @click="logout" role="button">
                       <p
-                        class="mt-2 block px-4 py-2 bg-green-100 hover:bg-green-100 dark:bg-[#23a455] dark:hover:text-white dark:hover:bg-[#23a455] text-center rounded-lg"
+                        class="mt-2 block px-4 py-2 bg-green-100 hover:bg-green-100 dark:bg-[#23a455] dark:hover:text-white dark:hover:bg-[#23a455] text-center rounded-md"
                       >
                         Sign out
                       </p>

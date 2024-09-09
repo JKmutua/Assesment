@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="w-full bg-green-50 dark:bg-gray-900">
-        <div class="mx-auto max-w-screen-2xl py-4 px-4 md:px-8">
+        <div class="mx-auto max-w-screen-xl py-4 px-4">
           <div class="flex justify-between">
             <div class="flex space-x-3">
               <div class="text-[#23a455] mt-0.5">
