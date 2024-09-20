@@ -256,16 +256,18 @@
               @click.prevent="login"
               class="w-full text-white bg-[#23a455] hover:bg-[#008100] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
-              Sign in
+              <div class="flex justify-center">
+                <span v-if="loading == false">Sign in</span>
+                <span v-if="loading == true">Authenticating</span>
+                <span v-if="loading == true" class="loader my-auto ms-2"></span>
+              </div>
             </button>
 
             <div class="flex justify-center mt-3">
               <span
                 class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-                >© 2024
-                <a href="https://flowbite.com/" class="hover:underline"
-                  >Spin Mobile™</a
-                >. All Rights Reserved.
+                >© 2024 <a href="#" class="hover:underline">Spin Mobile™</a>.
+                All Rights Reserved.
               </span>
             </div>
           </form>
@@ -277,6 +279,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 const see_password = ref(false);
+const loading = ref(false);
 const token = ref(useCookie("token"));
 import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
 import { useAuthStore } from "~/store/auth"; // import the auth store we just created
@@ -292,10 +295,33 @@ const user = ref({
 });
 const router = useRouter();
 const login = async () => {
+  loading.value = true;
   await authenticateUser(user.value); // call authenticateUser and pass the user object
   // redirect to homepage if user is authenticated
   if (authenticated) {
+    loading.value = false;
     router.push("/auth/verify");
   }
 };
 </script>
+<style>
+.loader {
+  width: 17px;
+  height: 17px;
+  border: 2px solid #fff;
+  border-bottom-color: #23a455;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>

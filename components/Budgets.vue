@@ -4,7 +4,7 @@
       <div class="flex my-auto">
         <div>
           <h1 class="font-medium text-sm uppercase">Customer Budgets</h1>
-          <p class="text-gray-500 dark:text-gray-500">
+          <p class="text-gray-500 dark:text-gray-400">
             <small>All Customer Budgets</small>
           </p>
         </div>

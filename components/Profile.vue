@@ -22,17 +22,32 @@
         </button>
       </div>
     </div>
-    <div class="mx-auto max-w-screen-sm px-4 mt-12">
+    <div class="mx-auto max-w-screen-sm px-4 mt-12 mb-6">
       <div>
         <h1 class="font-medium text-sm capitalise">Profile Picture</h1>
         <p class="text-gray-400 dark:text-gray-400">
           <small>Assuring customer identity</small>
         </p>
       </div>
-      <div class="flex justify-center">
+      <div class="flex justify-center mt-10">
         <span
-          class="my-auto text-[#23a455] bg-[#23a455] p-1.5 bg-opacity-20 rounded-full me-2"
+          class="my-auto text-[#23a455] bg-[#23a455] p-1.5 bg-opacity-20 rounded-full me-2 relative"
         >
+          <button
+            id="theme-toggle"
+            type="button"
+            class="text-gray-600 dark:text-gray-400 bg-white border border-gray-200 dark:border-gray-700 hover:bg-green-100 dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-1 absolute top-16 right-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="h-4 w-4"
+              viewBox="0 0 24 24"
+            >
+              <path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z" />
+            </svg>
+          </button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -51,6 +66,151 @@
             </g>
           </svg>
         </span>
+      </div>
+
+      <div class="mt-8">
+        <h1 class="font-medium text-sm capitalise">Profile Info</h1>
+        <p class="text-gray-400 dark:text-gray-400">
+          <small>Assuring customer identity</small>
+        </p>
+      </div>
+      <div class="grid gap-4 mb-6 lg:grid-cols-2 md:grid-cols-2 mt-6">
+        <div class="relative">
+          <div class="absolute top-2 left-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="h-5 w-5 text-gray-400"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M5 5h13a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1c-.5 0-.94.17-1.28.47l7.78 5.03l7.78-5.03C18.94 6.17 18.5 6 18 6zm6.5 6.71L3.13 7.28C3.05 7.5 3 7.75 3 8v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V8c0-.25-.05-.5-.13-.72z"
+              />
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="first_name"
+            class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="relative">
+          <div class="absolute top-2 left-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="h-5 w-5 text-gray-400"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M19.5 22a1.5 1.5 0 0 0 1.5-1.5V17a1.5 1.5 0 0 0-1.5-1.5c-1.17 0-2.32-.18-3.42-.55a1.51 1.51 0 0 0-1.52.37l-1.44 1.44a14.77 14.77 0 0 1-5.89-5.89l1.43-1.43c.41-.39.56-.97.38-1.53c-.36-1.09-.54-2.24-.54-3.41A1.5 1.5 0 0 0 7 3H3.5A1.5 1.5 0 0 0 2 4.5C2 14.15 9.85 22 19.5 22M3.5 4H7a.5.5 0 0 1 .5.5c0 1.28.2 2.53.59 3.72c.05.14.04.34-.12.5L6 10.68c1.65 3.23 4.07 5.65 7.31 7.32l1.95-1.97c.14-.14.33-.18.51-.13c1.2.4 2.45.6 3.73.6a.5.5 0 0 1 .5.5v3.5a.5.5 0 0 1-.5.5C10.4 21 3 13.6 3 4.5a.5.5 0 0 1 .5-.5"
+              />
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="first_name"
+            class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
+            placeholder="Phone Number"
+            required
+          />
+        </div>
+      </div>
+      <div>
+        <div class="relative">
+          <div class="absolute top-2 left-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="h-5 w-5 text-gray-300"
+              viewBox="0 0 256 256"
+            >
+              <g fill="currentColor">
+                <path
+                  d="M192 96a64 64 0 1 1-64-64a64 64 0 0 1 64 64"
+                  opacity="0.2"
+                />
+                <path
+                  d="M230.92 212c-15.23-26.33-38.7-45.21-66.09-54.16a72 72 0 1 0-73.66 0c-27.39 8.94-50.86 27.82-66.09 54.16a8 8 0 1 0 13.85 8c18.84-32.56 52.14-52 89.07-52s70.23 19.44 89.07 52a8 8 0 1 0 13.85-8M72 96a56 56 0 1 1 56 56a56.06 56.06 0 0 1-56-56"
+                />
+              </g>
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="first_name"
+            class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
+            placeholder="Full Name"
+            required
+          />
+        </div>
+      </div>
+      <div>
+        <div class="relative mt-6">
+          <div class="absolute top-2 left-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="h-5 w-5 text-gray-300"
+              viewBox="0 0 256 256"
+            >
+              <g fill="currentColor">
+                <path
+                  d="M136 108a52 52 0 1 1-52-52a52 52 0 0 1 52 52"
+                  opacity="0.2"
+                />
+                <path
+                  d="M117.25 157.92a60 60 0 1 0-66.5 0a95.83 95.83 0 0 0-47.22 37.71a8 8 0 1 0 13.4 8.74a80 80 0 0 1 134.14 0a8 8 0 0 0 13.4-8.74a95.83 95.83 0 0 0-47.22-37.71M40 108a44 44 0 1 1 44 44a44.05 44.05 0 0 1-44-44m210.14 98.7a8 8 0 0 1-11.07-2.33A79.83 79.83 0 0 0 172 168a8 8 0 0 1 0-16a44 44 0 1 0-16.34-84.87a8 8 0 1 1-5.94-14.85a60 60 0 0 1 55.53 105.64a95.83 95.83 0 0 1 47.22 37.71a8 8 0 0 1-2.33 11.07"
+                />
+              </g>
+            </svg>
+          </div>
+          <select
+            class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
+          >
+            <option value="">
+              <strong>Group Admin</strong>
+            </option>
+            <option value="kileleshwa">Customer</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="relative mt-6">
+        <div class="absolute top-2 left-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            class="h-5 w-5 text-gray-300"
+            viewBox="0 0 32 32"
+          >
+            <path
+              fill="currentColor"
+              d="M13 3c-3.855 0-7 3.145-7 7c0 2.41 1.23 4.55 3.094 5.813C5.527 17.343 3 20.883 3 25h2c0-4.43 3.57-8 8-8c2.145 0 4.063.879 5.5 2.25l-4.719 4.719l-.062.312l-.688 3.532l-.312 1.468l1.469-.312l3.53-.688l.313-.062l10.094-10.094c1.16-1.16 1.16-3.09 0-4.25a3.02 3.02 0 0 0-4.219-.031l-3.968 3.969a10.1 10.1 0 0 0-3.032-2A7.02 7.02 0 0 0 20 10c0-3.855-3.145-7-7-7m0 2c2.773 0 5 2.227 5 5s-2.227 5-5 5s-5-2.227-5-5s2.227-5 5-5m13 10c.254 0 .52.082.719.281a.977.977 0 0 1 0 1.406l-9.688 9.688l-1.781.375l.375-1.781l9.688-9.688A.93.93 0 0 1 26 15"
+            />
+          </svg>
+        </div>
+        <textarea
+          id="message"
+          rows="4"
+          class="block w-full bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
+          placeholder="Description"
+        ></textarea>
+      </div>
+      <div class="mt-8">
+        <h1 class="font-medium text-sm capitalise">Profile Info</h1>
+        <p class="text-gray-400 dark:text-gray-400">
+          <small>Assuring customer identity</small>
+        </p>
       </div>
     </div>
   </div>

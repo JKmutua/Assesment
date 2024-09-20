@@ -72,7 +72,11 @@
               @click.prevent="verify()"
               class="w-full text-white bg-[#23a455] hover:bg-[#008100] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
-              Verify
+              <div class="flex justify-center">
+                <span v-if="loading == false">Verify</span>
+                <span v-if="loading == true">Verifying</span>
+                <span v-if="loading == true" class="loader my-auto ms-2"></span>
+              </div>
             </button>
             <div class="flex items-center justify-end">
               <a
@@ -102,6 +106,7 @@
 import { ref } from "vue";
 const see_password = ref(false);
 const token = ref(useCookie("token"));
+const loading = ref(false);
 import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
 import { useAuthStore } from "~/store/auth"; // import the auth store we just created
 
@@ -115,11 +120,34 @@ const user = ref({
 });
 const router = useRouter();
 const verify = async () => {
+  loading.value = true;
   await verifyUser(user.value); // call verifyUser and pass the user object
   // redirect to homepage if user is verified
   if (verified) {
+    loading.value = false;
     await profileUser();
     router.push("/");
   }
 };
 </script>
+<style>
+.loader {
+  width: 17px;
+  height: 17px;
+  border: 2px solid #fff;
+  border-bottom-color: #23a455;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
