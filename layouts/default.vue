@@ -3,7 +3,7 @@
     <div class="">
       <div class="hidden lg:block absolute top-0">
         <div class="z-50 flex fixed">
-          <svg width="300" height="9" class="text-green-500">
+          <svg width="240" height="9" class="text-green-500">
             <line
               stroke-width="5px"
               x1="0"
@@ -13,7 +13,7 @@
               stroke="#23a455"
             />
           </svg>
-          <svg width="250" height="9" class="text-green-500">
+          <svg width="0" height="9" class="text-green-500">
             <line
               stroke-width="5px"
               x1="0"
@@ -66,7 +66,7 @@
                   class="dark:text-[#23a455] ms-1 me-2 text-sm p-2"
                 >
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"                                                                                                                                                                                            
+                    xmlns="http://www.w3.org/2000/svg"
                     width="1em"
                     class="h-5 w-5"
                     height="1em"
@@ -82,9 +82,9 @@
                     />
                   </svg>
                 </span>
-                <small class="dark:text-gray-400 font-regular p-2">
+                <span class="dark:text-gray-300 text-sm font-regular p-2">
                   Home
-                </small>
+                </span>
               </NuxtLink>
               <NuxtLink
                 to="/analytics"
@@ -113,9 +113,9 @@
                     />
                   </svg>
                 </button>
-                <small class="dark:text-gray-400 font-regular p-2">
+                <span class="dark:text-gray-300 text-sm font-regular p-2">
                   Analytics
-                </small>
+                </span>
               </NuxtLink>
             </div>
             <h1
@@ -149,9 +149,9 @@
                     />
                   </svg>
                 </button>
-                <small class="dark:text-gray-400 font-regular p-2">
+                <span class="dark:text-gray-300 text-sm font-regular p-2">
                   Customers
-                </small>
+                </span>
               </NuxtLink>
               <NuxtLink
                 to="/data/budgets"
@@ -177,9 +177,9 @@
                     />
                   </svg>
                 </button>
-                <small class="dark:text-gray-400 font-regular p-2">
+                <span class="dark:text-gray-300 text-sm font-regular p-2">
                   Budgets
-                </small>
+                </span>
               </NuxtLink>
               <NuxtLink
                 to="/data/transactions"
@@ -208,9 +208,9 @@
                     />
                   </svg>
                 </button>
-                <small class="dark:text-gray-400 font-regular p-2">
+                <span class="dark:text-gray-300 text-sm font-regular p-2">
                   Transactions
-                </small>
+                </span>
               </NuxtLink>
               <NuxtLink
                 to="/data/statements"
@@ -235,9 +235,9 @@
                     />
                   </svg>
                 </button>
-                <small class="dark:text-gray-400 font-regular p-2">
+                <span class="dark:text-gray-300 text-sm font-regular p-2">
                   Statements
-                </small>
+                </span>
               </NuxtLink>
               <NuxtLink
                 to="/data/goals"
@@ -276,9 +276,9 @@
                     <path fill="none" d="M0 0h36v36H0z" />
                   </svg>
                 </button>
-                <small class="dark:text-gray-400 font-regular p-2">
+                <span class="dark:text-gray-300 text-sm font-regular p-2">
                   Goals
-                </small>
+                </span>
               </NuxtLink>
             </div>
             <h1
@@ -312,12 +312,12 @@
                     />
                   </svg>
                 </button>
-                <small class="dark:text-gray-400 font-regular p-2">
+                <span class="dark:text-gray-300 text-sm font-regular p-2">
                   Users
-                </small>
+                </span>
               </NuxtLink>
               <NuxtLink
-                to="/data/reports"
+                to="/admin/reports"
                 role="button"
                 activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
@@ -343,9 +343,9 @@
                     />
                   </svg>
                 </button>
-                <small class="dark:text-gray-400 font-regular p-2">
+                <span class="dark:text-gray-300 text-sm font-regular p-2">
                   Reports
-                </small>
+                </span>
               </NuxtLink>
             </div>
           </div>
@@ -390,9 +390,9 @@
                     <path fill="none" d="M0 0h36v36H0z" />
                   </svg>
                 </button>
-                <small class="dark:text-gray-400 font-regular p-2">
+                <span class="dark:text-gray-300 text-sm font-regular p-2">
                   Help
-                </small>
+                </span>
               </NuxtLink>
               <NuxtLink
                 role="button"
@@ -420,9 +420,9 @@
                     />
                   </svg>
                 </button>
-                <small class="dark:text-gray-400 font-regular p-2">
+                <span class="dark:text-gray-300 text-sm font-regular p-2">
                   Settings
-                </small>
+                </span>
               </NuxtLink>
               <li
                 role="button"
@@ -450,11 +450,11 @@
                     />
                   </svg>
                 </button>
-                <small
-                  class="text-gray-500 dark:text-gray-400 font-regular p-2"
+                <span
+                  class="text-gray-500 dark:text-gray-300 text-sm font-regular p-2"
                 >
                   Justus Katunga
-                </small>
+                </span>
               </li>
             </div>
           </div>
@@ -583,7 +583,7 @@
                   data-dropdown-offset-distance="10"
                   data-dropdown-offset-skidding="50"
                   type="button"
-                  class="text-gray-400 dark:text-[#23a455] bg-white border border-gray-200 dark:border-gray-700 hover:bg-green-100 dark:text-[#23a455] dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                  class="text-red-500 dark:text-red-600 bg-white border border-gray-200 dark:border-gray-700 hover:bg-green-100 dark:text-[#23a455] dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

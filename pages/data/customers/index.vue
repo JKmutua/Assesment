@@ -1,7 +1,7 @@
 <template>
-  <div class="h-screen py-3 sm:py-8 lg:py-8">
+  <div class="h-screen bg-gray-100 dark:bg-gray-900 py-3 sm:py-8 lg:py-8">
     <div class="mx-auto max-w-screen-xl px-4">
-      <div class="flex justify-between mb-4">
+      <!-- <div class="flex justify-between mb-4">
         <div class="flex my-auto">
           <div
             class="text-[#23a455] bg-[#23a455] p-1.5 bg-opacity-20 rounded-full me-2"
@@ -38,10 +38,8 @@
             <span class="me-2">Add New</span>
           </button>
         </div>
-      </div>
-      <div
-        class="p-6 mt-6 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
-      >
+      </div> -->
+      <div class="">
         <DataTablesCustomers />
       </div>
     </div>

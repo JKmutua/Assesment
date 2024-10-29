@@ -21,7 +21,7 @@
           <span class="me-2 text-sm">Refresh Data</span>
         </button>
         <NuxtLink
-          to="/data/customers/customers"
+          to="/admin/users/users"
           class="me-2 flex text-white bg-amber-500 text-sm hover:bg-opacity-90 font-regular py-2 px-4 rounded-md"
         >
           <i class="pi pi-user-plus my-auto me-1"></i>
@@ -35,29 +35,29 @@
           <span class="me-2 text-sm my-auto">Export CSV</span>
         </button>
         <!-- <div class="ms-8">
-          <Button
-            size="small"
-            icon="pi pi-file-excel"
-            label="Export CSV"
-            severity="success"
-          />
-        </div>
-        <div class="ms-2">
-          <Button
-            size="small"
-            label="Refresh Data"
-            icon="pi pi-refresh"
-            severity="danger"
-          />
-        </div>
-        <div class="ms-2">
-          <Button
-            size="small"
-            label="Add New"
-            icon="pi pi-user-plus"
-            severity="warn"
-          />
-        </div> -->
+            <Button
+              size="small"
+              icon="pi pi-file-excel"
+              label="Export CSV"
+              severity="success"
+            />
+          </div>
+          <div class="ms-2">
+            <Button
+              size="small"
+              label="Refresh Data"
+              icon="pi pi-refresh"
+              severity="danger"
+            />
+          </div>
+          <div class="ms-2">
+            <Button
+              size="small"
+              label="Add New"
+              icon="pi pi-user-plus"
+              severity="warn"
+            />
+          </div> -->
       </div>
     </div>
     <div
@@ -87,29 +87,29 @@
           <template #body="{ data }">
             <div class="flex items-center gap-2">
               <!-- <span class="text-green-500">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                class="w-8 h-8"
-                viewBox="0 0 24 24"
-              >
-                <g fill="none" fill-rule="evenodd">
-                  <path
-                    d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
-                  />
-                  <path
-                    fill="currentColor"
-                    d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2M8.5 9.5a3.5 3.5 0 1 1 7 0a3.5 3.5 0 0 1-7 0m9.758 7.484A7.99 7.99 0 0 1 12 20a7.99 7.99 0 0 1-6.258-3.016C7.363 15.821 9.575 15 12 15s4.637.821 6.258 1.984"
-                  />
-                </g>
-              </svg>
-            </span> -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="1em"
+                  height="1em"
+                  class="w-8 h-8"
+                  viewBox="0 0 24 24"
+                >
+                  <g fill="none" fill-rule="evenodd">
+                    <path
+                      d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
+                    />
+                    <path
+                      fill="currentColor"
+                      d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2M8.5 9.5a3.5 3.5 0 1 1 7 0a3.5 3.5 0 0 1-7 0m9.758 7.484A7.99 7.99 0 0 1 12 20a7.99 7.99 0 0 1-6.258-3.016C7.363 15.821 9.575 15 12 15s4.637.821 6.258 1.984"
+                    />
+                  </g>
+                </svg>
+              </span> -->
               <!-- <img
-              :alt="data.name"
-              src="https://static.vecteezy.com/system/resources/previews/013/042/571/original/default-avatar-profile-icon-social-media-user-photo-in-flat-style-vector.jpg"
-              style="width: 32px"
-            /> -->
+                :alt="data.name"
+                src="https://static.vecteezy.com/system/resources/previews/013/042/571/original/default-avatar-profile-icon-social-media-user-photo-in-flat-style-vector.jpg"
+                style="width: 32px"
+              /> -->
               <span
                 class="text-sm px-2 py-1.5 text-green-700 font-semibold rounded-full bg-green-700 bg-opacity-20"
                 >{{ getAbr(data.name) }}</span

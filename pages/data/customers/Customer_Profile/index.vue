@@ -140,6 +140,35 @@
               </li>
               <li class="w-full lg:w-60 md:w-60">
                 <a
+                  href="#"
+                  @click="selected_section = 'transactions'"
+                  :class="
+                    selected_section == 'transactions'
+                      ? 'inline-flex items-center px-4 py-3 text-green-500 bg-green-500 bg-opacity-10 dark:bg-opacity-20 rounded-md active w-full'
+                      : 'inline-flex items-center text-gray-500 dark:text-gray-400 px-4 py-3 rounded-lg hover:text-gray-900 hover:bg-white w-full dark:bg-gray-800 dark:hover:bg-gray-600 dark:hover:text-white'
+                  "
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    class="w-5 h-5 me-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M13 5h8m-8 4h5m-5 6h8m-8 4h5M3 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1zm0 10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"
+                    />
+                  </svg>
+                  Transactions
+                </a>
+              </li>
+              <li class="w-full lg:w-60 md:w-60">
+                <a
                   to="#"
                   role="button"
                   @click="selected_section = 'settings'"
@@ -192,6 +221,13 @@
             class="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
           >
             <Statements />
+          </div>
+          <div
+            v-if="selected_section == 'transactions'"
+            id="statements"
+            class="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+          >
+            <UserTransactions />
           </div>
           <div
             v-if="selected_section == 'settings'"

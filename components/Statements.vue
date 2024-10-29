@@ -83,7 +83,7 @@
           <div class="flex justify-between">
             <div class="flex my-auto">
               <div
-                class="my-auto text-[#23a455] bg-[#23a455] p-1.5 bg-opacity-20 rounded-lg me-2"
+                class="my-auto text-red-500 bg-red-500 p-1.5 bg-opacity-20 rounded-lg me-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@
           <div class="flex justify-between">
             <div class="flex my-auto">
               <div
-                class="my-auto text-amber-500 bg-amber-500 p-1.5 bg-opacity-20 rounded-lg me-2"
+                class="my-auto text-red-500 bg-red-500 p-1.5 bg-opacity-20 rounded-lg me-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +242,7 @@
           <div class="flex justify-between">
             <div class="flex my-auto">
               <div
-                class="my-auto text-[#23a455] bg-[#23a455] p-1.5 bg-opacity-20 rounded-lg me-2"
+                class="my-auto text-red-500 bg-red-500 p-1.5 bg-opacity-20 rounded-lg me-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -295,7 +295,7 @@
           <div class="flex justify-between">
             <div class="flex my-auto">
               <div
-                class="my-auto text-amber-500 bg-amber-500 p-1.5 bg-opacity-20 rounded-lg me-2"
+                class="my-auto text-red-500 bg-red-500 p-1.5 bg-opacity-20 rounded-lg me-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
