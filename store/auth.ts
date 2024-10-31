@@ -22,7 +22,7 @@ export const useAuthStore = defineStore("auth", {
       const is_customer = false;
       // useFetch from nuxt 3
       const { data, pending }: any = await useFetch(
-        "https://stage-individual.spinmobile.co/api/auth/token/",
+        "https://stage-individual.spinmobile.co/api/auth/login/",
         {
           method: "post",
           headers: { "Content-Type": "application/json" },
