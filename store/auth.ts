@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 
 interface UserPayloadInterface {
-  phone_number: string;
+  credential: string;
   password: string;
 }
 
@@ -18,8 +18,9 @@ export const useAuthStore = defineStore("auth", {
     user_id: "",
   }),
   actions: {
-    async authenticateUser({ phone_number, password }: UserPayloadInterface) {
-      const is_customer = false;
+    async authenticateUser({ credential, password }: UserPayloadInterface) {
+      this.authenticated = false;
+
       // useFetch from nuxt 3
       const { data, pending }: any = await useFetch(
         "https://stage-individual.spinmobile.co/api/auth/login/",
@@ -27,15 +28,15 @@ export const useAuthStore = defineStore("auth", {
           method: "post",
           headers: { "Content-Type": "application/json" },
           body: {
-            phone_number,
+            credential,
             password,
-            is_customer,
           },
         }
       );
       this.loading = pending;
+      console.log("The login response", this.authenticated);
 
-      if (data.value.code == "200.000.000") {
+      if (data.value.code == "100.000.000") {
         const token = useCookie("token"); // useCookie new hook in nuxt 3
         token.value = data.value.data.token; // set token to cookie
         this.user_id = data.value.data.user_id;
@@ -43,24 +44,24 @@ export const useAuthStore = defineStore("auth", {
       }
     },
     async verifyUser({ otp }: VerifyInterface) {
+      this.verified = false;
       const is_customer = false;
       const token = useCookie("token");
       // useFetch from nuxt 3
       const { data, pending }: any = await useFetch(
-        "https://stage-individual.spinmobile.co/api/auth/verify/",
+        "https://stage-individual.spinmobile.co/api/auth/verify-otp/",
         {
           method: "post",
           headers: { "Content-Type": "application/json" },
           body: {
             otp,
             token,
-            is_customer,
           },
         }
       );
       this.loading = pending;
 
-      if (data.value.code == "200.000.000") {
+      if (data.value.code == "100.000.000") {
         this.verified = true; // set authenticated  state value to true
       }
     },

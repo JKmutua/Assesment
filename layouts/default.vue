@@ -58,7 +58,7 @@
               <NuxtLink
                 to="/"
                 role="button"
-                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                activeClass="bg-slate-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <span
@@ -89,7 +89,7 @@
               <NuxtLink
                 to="/analytics"
                 role="button"
-                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                activeClass="bg-slate-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
@@ -129,7 +129,7 @@
               <NuxtLink
                 to="/data/customers"
                 role="button"
-                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                activeClass="bg-slate-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
@@ -156,7 +156,7 @@
               <NuxtLink
                 to="/data/budgets"
                 role="button"
-                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                activeClass="bg-slate-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
@@ -184,7 +184,7 @@
               <NuxtLink
                 to="/data/transactions"
                 role="button"
-                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                activeClass="bg-slate-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
@@ -215,7 +215,7 @@
               <NuxtLink
                 to="/data/statements"
                 role="button"
-                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                activeClass="bg-slate-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
@@ -242,7 +242,7 @@
               <NuxtLink
                 to="/data/goals"
                 role="button"
-                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                activeClass="bg-slate-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
@@ -292,7 +292,7 @@
               <NuxtLink
                 to="/admin/users"
                 role="button"
-                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                activeClass="bg-slate-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
@@ -319,7 +319,7 @@
               <NuxtLink
                 to="/admin/reports"
                 role="button"
-                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                activeClass="bg-slate-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
@@ -355,7 +355,7 @@
             >
               <NuxtLink
                 role="button"
-                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                activeClass="bg-slate-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
@@ -396,7 +396,7 @@
               </NuxtLink>
               <NuxtLink
                 role="button"
-                activeClass="bg-gray-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
+                activeClass="bg-slate-100 text-green-700 dark:text-[#23a455] dark:bg-gray-700 mb-1"
                 class="flex flex-row hover:bg-gray-50 text-gray-500 dark:text-[#23a455] dark:hover:bg-gray-700 focus:outline-none focus:ring-0 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-md"
               >
                 <button
@@ -461,8 +461,8 @@
         </div>
       </aside>
 
-      <div class="sm:ml-60 bg-gray-100 dark:bg-gray-900" id="main-content">
-        <div class="pt-5 mx-auto max-w-screen-xl px-4">
+      <div class="sm:ml-60 bg-slate-100 dark:bg-gray-900" id="main-content">
+        <div class="pt-5 mx-auto max-w-screen-2xl px-4">
           <div class="flex justify-between">
             <div class="flex">
               <button
@@ -531,6 +531,24 @@
                 class="text-2xl text-gray-900 dark:text-white mt-0.5 capitalize"
               >
                 <span v-if="$route.path == '/'">Dashboard</span>
+                <span
+                  v-else-if="
+                    containsNumbers(
+                      String($route.path).split('/')[
+                        String($route.path).split('/').length - 1
+                      ]
+                    )
+                  "
+                >
+                  {{
+                    String($route.path)
+                      .split("/")
+                      [String($route.path).split("/").length - 2].replaceAll(
+                        "_",
+                        " "
+                      )
+                  }}
+                </span>
                 <span v-else>{{
                   String($route.path)
                     .split("/")
@@ -869,6 +887,9 @@ const router = useRouter();
 const logout = () => {
   logUserOut();
 };
+function containsNumbers(str) {
+  return /\d/.test(str); // \d matches any digit (0-9)
+}
 onMounted(() => {
   if (
     localStorage.getItem("color-theme") === "dark" ||

@@ -8,7 +8,7 @@
           <h1
             class="text-xl -mb-3 font-bold text-center leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
           >
-            Hello Justus {{ verified }}
+            Hello Justus
           </h1>
           <p class="text-sm text-center font-medium text-gray-400">
             Please input the verification code below
@@ -21,7 +21,7 @@
                 v-model="user.otp"
                 id="password"
                 placeholder="otp"
-                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
               />
               <span
                 class="-ml-8 text-gray-500 dark:text-gray-400"
@@ -70,7 +70,7 @@
             <button
               type="submit"
               @click.prevent="verify()"
-              class="w-full text-white bg-[#23a455] hover:bg-[#008100] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              class="w-full text-white bg-[#23a455] hover:bg-[#008100] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md text-sm px-5 py-3.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               <div class="flex justify-center">
                 <span v-if="loading == false">Verify</span>
@@ -85,7 +85,11 @@
                 >Back to Login</a
               >
             </div>
-
+            <div class="text-center" v-if="error">
+              <span class="text-[0.8rem] text-red-500 font-medium"
+                >Wrong verification code. Please try again
+              </span>
+            </div>
             <div class="flex justify-center mt-3">
               <span
                 class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
@@ -107,6 +111,7 @@ import { ref } from "vue";
 const see_password = ref(false);
 const token = ref(useCookie("token"));
 const loading = ref(false);
+const error = ref(false);
 import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
 import { useAuthStore } from "~/store/auth"; // import the auth store we just created
 
@@ -123,10 +128,14 @@ const verify = async () => {
   loading.value = true;
   await verifyUser(user.value); // call verifyUser and pass the user object
   // redirect to homepage if user is verified
-  if (verified) {
+  if (verified.value == true) {
+    error.value = false;
     loading.value = false;
     await profileUser();
     router.push("/");
+  } else {
+    loading.value = false;
+    error.value = true;
   }
 };
 </script>

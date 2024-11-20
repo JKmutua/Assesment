@@ -1,26 +1,92 @@
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+import { useRoute, useCookie } from "#app";
+
+// Initialize necessary variables
+const selected_section = ref("profile");
+const { id } = useRoute().params;
+const is_customer = false;
+const user_id = id;
+const token = useCookie("token").value;
+const isLoading = ref(false);
+// Define the ProfileData interface
+interface ProfileData {
+  username: string;
+  email: string;
+  phone_number: string;
+  first_name: string;
+  last_name: string;
+  other_name: string | null;
+  gender: string;
+  is_superuser: boolean;
+  terms_and_conditions_accepted: boolean;
+  language_code: string;
+  last_activity: string;
+  organisation_name: string | null;
+  role_name: string;
+  state_name: string;
+  id_no: string | null;
+  other_phone_number: string | null;
+  occupation: string | null;
+  employment_type: string;
+  income_from_investments: string | null;
+  currency: string | null;
+  net_salary: string | null;
+  work_place_grants_or_allowance: string | null;
+  physical_work_address: string | null;
+  country: string;
+  country_of_work: string;
+  permissions: any[]; // Array of permissions
+}
+
+// Define the ApiResponse interface
+interface ApiResponse {
+  profile: {
+    code: string;
+    message: string;
+    data: ProfileData;
+  }; // Profile is an array of objects with code, message, and data
+}
+const profile = ref<ProfileData | null>(null);
+// Fetch profile data using useAsyncData
+const { data, error, status } = await useAsyncData("profile", async () => {
+  const profileData = await $fetch(
+    "https://stage-individual.spinmobile.co/api/auth/profile/",
+    {
+      method: "POST",
+      body: {
+        token,
+        user_id,
+        is_customer,
+      },
+    }
+  );
+  return { profile: profileData };
+});
+
+// Create a ref to hold profile data (from the first item in the profile array)
+
+// Set loading state based on the status of the fetch operation
+onMounted(() => {
+  isLoading.value = status.value === "pending";
+  console.log(data.value);
+  if (data.value && data.value.profile && data.value?.profile) {
+    profile.value = data.value.profile?.data;
+  }
+});
+</script>
 <template>
-  <div class="h-screen py-3 sm:py-8 lg:py-8">
-    <div class="mx-auto max-w-screen-xl px-4">
+  <div class="mx-auto max-w-screen-2xl px-4">
+    <div
+      class="h-screen py-3 sm:py-8 lg:py-8"
+      v-if="status != 'pending' && profile != null"
+    >
       <div class="grid grid-cols-3 gap-4">
         <div class="sm:col-span-1 col-span-3 py-3 lg:me-4 md:me-4">
           <div class="flex my-auto">
             <div
               class="my-auto text-[#23a455] bg-[#23a455] p-1.5 bg-opacity-20 rounded-full me-2"
             >
-              <!-- <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                class="h-8 w-8"
-                viewBox="0 0 15 15"
-              >
-                <path
-                  fill="currentColor"
-                  fill-rule="evenodd"
-                  d="M.877 7.5a6.623 6.623 0 1 1 13.246 0a6.623 6.623 0 0 1-13.246 0M7.5 1.827a5.673 5.673 0 0 0-4.193 9.494A4.971 4.971 0 0 1 7.5 9.025a4.97 4.97 0 0 1 4.193 2.296A5.673 5.673 0 0 0 7.5 1.827m3.482 10.152A4.023 4.023 0 0 0 7.5 9.975a4.023 4.023 0 0 0-3.482 2.004A5.648 5.648 0 0 0 7.5 13.173c1.312 0 2.52-.446 3.482-1.194M5.15 6.505a2.35 2.35 0 1 1 4.7 0a2.35 2.35 0 0 1-4.7 0m2.35-1.4a1.4 1.4 0 1 0 0 2.8a1.4 1.4 0 0 0 0-2.8"
-                  clip-rule="evenodd"
-                />
-              </svg> -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1em"
@@ -39,9 +105,12 @@
                 </g>
               </svg>
             </div>
+            <!-- <pre>{{ profile }}</pre> -->
             <div class="flex my-auto">
               <div>
-                <h1 class="font-medium text-semibold">Justus Katunga</h1>
+                <h1 class="font-medium text-semibold">
+                  {{ profile?.first_name.concat(" ", profile?.last_name) }}
+                </h1>
                 <p class="-mt-1.5 text-gray-500 dark:text-gray-500">
                   <small>Customer Profile Info</small>
                 </p>
@@ -239,9 +308,8 @@
         </div>
       </div>
     </div>
+    <div v-else>
+      <p>Profile is missing or has no data available.</p>
+    </div>
   </div>
 </template>
-<script setup lang="ts">
-import { ref, onMounted } from "vue";
-const selected_section = ref("profile");
-</script>

@@ -1,25 +1,25 @@
 <template>
   <div class="h-full sm:h-dvh py-3 sm:py-8 lg:py-8">
-    <div class="mx-auto max-w-screen-xl px-4">
+    <div class="mx-auto max-w-screen-2xl px-4">
       <div
-        class="border-b border-gray-300 dark:border-gray-700 border-dashed pb-6"
+        class="border-b border-slate-300 dark:border-slate-700 border-dashed pb-6"
       >
         <div class="flex justify-between mb-6">
           <div class="my-auto">
             <div
-              class="text-xl font-semibold text-gray-700 dark:text-gray-400 space-x-1 rtl:space-x-reverse"
+              class="text-xl font-semibold text-slate-700 dark:text-slate-400 space-x-1 rtl:space-x-reverse"
             >
               Get Things Done
             </div>
             <p
-              class="-mt-1 font-regular space-x-1 rtl:space-x-reverse text-gray-500 dark:text-gray-400"
+              class="-mt-1 font-regular space-x-1 rtl:space-x-reverse text-slate-500 dark:text-slate-400"
             >
               <small>Handling user Support issues</small>
             </p>
           </div>
           <div class="flex my-auto mb-2">
             <button
-              class="bg-white me-2 text-sm font-regular py-2 px-4 rounded-md border border-gray-300 hover:border-gray-200 dark:text-white dark:border-gray-500 dark:hover:border-gray-600 dark:bg-gray-700"
+              class="bg-white me-2 text-sm font-regular py-2 px-4 rounded-md border border-slate-300 hover:border-slate-200 dark:text-white dark:border-slate-500 dark:hover:border-slate-600 dark:bg-slate-700"
             >
               <span class="me-2">All Issues</span>
             </button>
@@ -33,7 +33,7 @@
         <div class="grid sm:grid-cols-3 grid-cols-1 gap-4">
           <div class="relative">
             <div
-              class="z-20 absolute w-full animate-pulse p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[#23a455] bg-opacity-70"
+              class="z-20 absolute w-full animate-pulse p-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-[#23a455] bg-opacity-70"
             >
               <div class="mb-3">
                 <h1 class="text-white text-3xl font-bold">72</h1>
@@ -52,7 +52,7 @@
               </div>
             </div>
             <div
-              class="absolute w-full p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-[url('/assets/images/mt.jpg')]"
+              class="absolute w-full p-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-[url('/assets/images/mt.jpg')]"
             >
               <div class="mb-3">
                 <h1 class="text-white text-3xl font-bold">72</h1>
@@ -73,12 +73,12 @@
           </div>
 
           <div
-            class="relative p-6 sm:mt-0 mt-[150px] rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+            class="relative p-6 sm:mt-0 mt-[150px] rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
           >
             <div class="absolute right-0 top-0 mt-6 me-1">
               <button
                 type="button"
-                class="text-[#23a455] dark:text-[#23a455] bg-[#23a455] bg-opacity-20 dark:text-[#23a455] me-3 dark:bg-[#23a455] dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                class="text-[#23a455] dark:text-[#23a455] bg-[#23a455] bg-opacity-20 dark:text-[#23a455] me-3 dark:bg-[#23a455] dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-full text-sm p-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -96,13 +96,13 @@
             </div>
             <div class="space-y-2.5">
               <div
-                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-gray-500 dark:text-gray-400"
+                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-slate-500 dark:text-slate-400"
               >
                 <span>Usage</span>
               </div>
 
               <div
-                class="text-xl mb-3 font-semibold text-gray-700 dark:text-gray-100"
+                class="text-xl mb-3 font-semibold text-slate-700 dark:text-slate-100"
               >
                 Manage Customers
               </div>
@@ -149,12 +149,12 @@
           </div>
 
           <div
-            class="relative p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+            class="relative p-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
           >
             <div class="absolute right-0 top-0 mt-6 me-1">
               <button
                 type="button"
-                class="text-yellow-400 dark:text-yellow-400 bg-yellow-400 bg-opacity-20 me-3 dark:bg-yellow-400 dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                class="text-yellow-400 dark:text-yellow-400 bg-yellow-400 bg-opacity-20 me-3 dark:bg-yellow-400 dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-full text-sm p-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -173,13 +173,13 @@
             </div>
             <div class="space-y-2.5">
               <div
-                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-gray-500 dark:text-gray-400"
+                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-slate-500 dark:text-slate-400"
               >
                 <span>Usage</span>
               </div>
 
               <div
-                class="text-xl mb-3 font-semibold text-gray-700 dark:text-gray-100"
+                class="text-xl mb-3 font-semibold text-slate-700 dark:text-slate-100"
               >
                 Manage Budgets
               </div>
@@ -209,12 +209,12 @@
           </div>
 
           <div
-            class="relative p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+            class="relative p-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
           >
             <div class="absolute right-0 top-0 mt-6 me-1">
               <button
                 type="button"
-                class="text-red-500 dark:text-red-500 bg-red-500 bg-opacity-20 dark:text-red-500 me-3 dark:bg-red-500 dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                class="text-red-500 dark:text-red-500 bg-red-500 bg-opacity-20 dark:text-red-500 me-3 dark:bg-red-500 dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-full text-sm p-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -246,13 +246,13 @@
             </div>
             <div class="space-y-2">
               <div
-                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-gray-500 dark:text-gray-400"
+                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-slate-500 dark:text-slate-400"
               >
                 <span>Usage</span>
               </div>
 
               <div
-                class="text-xl mb-3 font-semibold text-gray-700 dark:text-gray-100"
+                class="text-xl mb-3 font-semibold text-slate-700 dark:text-slate-100"
               >
                 Manage Goals
               </div>
@@ -280,12 +280,12 @@
           </div>
 
           <div
-            class="relative p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+            class="relative p-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
           >
             <div class="absolute right-0 top-0 mt-6 me-1">
               <button
                 type="button"
-                class="text-[#23a455] dark:text-[#23a455] bg-[#23a455] bg-opacity-20 dark:text-[#23a455] me-3 dark:bg-[#23a455] dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                class="text-[#23a455] dark:text-[#23a455] bg-[#23a455] bg-opacity-20 dark:text-[#23a455] me-3 dark:bg-[#23a455] dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-full text-sm p-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -307,13 +307,13 @@
             </div>
             <div class="space-y-2">
               <div
-                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-gray-500 dark:text-gray-400"
+                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-slate-500 dark:text-slate-400"
               >
                 <span>Data</span>
               </div>
 
               <div
-                class="text-xl mb-3 font-semibold text-gray-700 dark:text-gray-100"
+                class="text-xl mb-3 font-semibold text-slate-700 dark:text-slate-100"
               >
                 All Transactions
               </div>
@@ -341,12 +341,12 @@
           </div>
 
           <div
-            class="relative p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+            class="relative p-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
           >
             <div class="absolute right-0 top-0 mt-6 me-1">
               <button
                 type="button"
-                class="text-yellow-400 dark:text-yellow-400 bg-yellow-400 bg-opacity-20 me-3 dark:bg-yellow-400 dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                class="text-yellow-400 dark:text-yellow-400 bg-yellow-400 bg-opacity-20 me-3 dark:bg-yellow-400 dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-full text-sm p-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -364,13 +364,13 @@
             </div>
             <div class="space-y-2.5">
               <div
-                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-gray-500 dark:text-gray-400"
+                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-slate-500 dark:text-slate-400"
               >
                 <span>Data</span>
               </div>
 
               <div
-                class="text-xl mb-3 font-semibold text-gray-700 dark:text-gray-100"
+                class="text-xl mb-3 font-semibold text-slate-700 dark:text-slate-100"
               >
                 Processed Statements
               </div>
@@ -400,23 +400,23 @@
       </div>
       <div class="my-5">
         <div
-          class="text-xl mb-1 font-semibold text-gray-700 dark:text-gray-400 space-x-1 rtl:space-x-reverse"
+          class="text-xl mb-1 font-semibold text-slate-700 dark:text-slate-400 space-x-1 rtl:space-x-reverse"
         >
           Administration
         </div>
         <p
-          class="mb-3 -mt-1 font-regular space-x-1 rtl:space-x-reverse text-gray-500 dark:text-gray-400"
+          class="mb-3 -mt-1 font-regular space-x-1 rtl:space-x-reverse text-slate-500 dark:text-slate-400"
         >
           <small>System access & reports</small>
         </p>
         <div class="grid sm:grid-cols-3 grid-cols-1 gap-4">
           <div
-            class="relative p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+            class="relative p-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
           >
             <div class="absolute right-0 top-0 mt-6 me-1">
               <button
                 type="button"
-                class="text-[#23a455] dark:text-[#23a455] bg-[#23a455] bg-opacity-20 dark:text-[#23a455] me-3 dark:bg-[#23a455] dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                class="text-[#23a455] dark:text-[#23a455] bg-[#23a455] bg-opacity-20 dark:text-[#23a455] me-3 dark:bg-[#23a455] dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-full text-sm p-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -438,13 +438,13 @@
             </div>
             <div class="space-y-2.5">
               <div
-                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-gray-500 dark:text-gray-400"
+                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-slate-500 dark:text-slate-400"
               >
                 <span>Admin</span>
               </div>
 
               <div
-                class="text-xl mb-3 font-semibold text-gray-700 dark:text-gray-100"
+                class="text-xl mb-3 font-semibold text-slate-700 dark:text-slate-100"
               >
                 System Access
               </div>
@@ -491,12 +491,12 @@
           </div>
 
           <div
-            class="relative p-6 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
+            class="relative p-6 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800"
           >
             <div class="absolute right-0 top-0 mt-6 me-1">
               <button
                 type="button"
-                class="text-yellow-400 dark:text-yellow-400 bg-yellow-400 bg-opacity-20 me-3 dark:bg-yellow-400 dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2"
+                class="text-yellow-400 dark:text-yellow-400 bg-yellow-400 bg-opacity-20 me-3 dark:bg-yellow-400 dark:bg-opacity-20 focus:outline-none focus:ring-2 focus:ring-slate-200 dark:focus:ring-slate-700 rounded-full text-sm p-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -518,13 +518,13 @@
             </div>
             <div class="space-y-2.5">
               <div
-                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-gray-500 dark:text-gray-400"
+                class="flex items-center space-x-2 rtl:space-x-reverse text-sm font-medium text-slate-500 dark:text-slate-400"
               >
                 <span>Admin</span>
               </div>
 
               <div
-                class="text-xl mb-3 font-semibold text-gray-700 dark:text-gray-100"
+                class="text-xl mb-3 font-semibold text-slate-700 dark:text-slate-100"
               >
                 Reports
               </div>
