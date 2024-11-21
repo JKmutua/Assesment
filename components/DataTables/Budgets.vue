@@ -49,6 +49,7 @@
         :value="customers"
         sortMode="multiple"
         :rows="10"
+        showGridlines
         :rowsPerPageOptions="[5, 10, 20, 50]"
         tableStyle="min-width: 50rem"
       >

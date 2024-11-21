@@ -861,7 +861,7 @@
                     </li>
                     <li @click="logout" role="button">
                       <p
-                        class="mt-2 block px-4 py-2 bg-green-100 hover:bg-green-100 dark:bg-[#23a455] dark:hover:text-white dark:hover:bg-[#23a455] text-center rounded-md"
+                        class="mt-2 block px-4 py-2 bg-green-500 text-green-500 bg-opacity-20 hover:bg-green-100 dark:hover:text-white dark:hover:bg-[#23a455] text-center rounded-md"
                       >
                         Sign out
                       </p>

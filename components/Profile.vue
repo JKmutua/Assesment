@@ -2,6 +2,7 @@
   <div>
     <div class="flex justify-between mb-4">
       <div class="flex my-auto">
+        <!-- <pre>{{ profile }}</pre> -->
         <div>
           <h1 class="font-medium text-sm uppercase">General Info</h1>
           <p class="text-gray-400 dark:text-gray-400">
@@ -93,6 +94,7 @@
           <input
             type="text"
             id="first_name"
+            v-model="profile.email"
             class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
             placeholder="Email"
             required
@@ -116,13 +118,134 @@
           <input
             type="text"
             id="first_name"
+            v-model="profile.phone_number"
             class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
             placeholder="Phone Number"
             required
           />
         </div>
       </div>
-      <div>
+      <div class="grid gap-4 mb-6 lg:grid-cols-2 md:grid-cols-2 mt-6">
+        <div class="relative">
+          <div class="absolute top-2 left-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="h-5 w-5 text-gray-300"
+              viewBox="0 0 256 256"
+            >
+              <g fill="currentColor">
+                <path
+                  d="M192 96a64 64 0 1 1-64-64a64 64 0 0 1 64 64"
+                  opacity="0.2"
+                />
+                <path
+                  d="M230.92 212c-15.23-26.33-38.7-45.21-66.09-54.16a72 72 0 1 0-73.66 0c-27.39 8.94-50.86 27.82-66.09 54.16a8 8 0 1 0 13.85 8c18.84-32.56 52.14-52 89.07-52s70.23 19.44 89.07 52a8 8 0 1 0 13.85-8M72 96a56 56 0 1 1 56 56a56.06 56.06 0 0 1-56-56"
+                />
+              </g>
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="first_name"
+            v-model="profile.username"
+            class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
+            placeholder="Username"
+            required
+          />
+        </div>
+        <div class="relative">
+          <div class="absolute top-2 left-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="h-5 w-5 text-gray-300"
+              viewBox="0 0 256 256"
+            >
+              <g fill="currentColor">
+                <path
+                  d="M192 96a64 64 0 1 1-64-64a64 64 0 0 1 64 64"
+                  opacity="0.2"
+                />
+                <path
+                  d="M230.92 212c-15.23-26.33-38.7-45.21-66.09-54.16a72 72 0 1 0-73.66 0c-27.39 8.94-50.86 27.82-66.09 54.16a8 8 0 1 0 13.85 8c18.84-32.56 52.14-52 89.07-52s70.23 19.44 89.07 52a8 8 0 1 0 13.85-8M72 96a56 56 0 1 1 56 56a56.06 56.06 0 0 1-56-56"
+                />
+              </g>
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="first_name"
+            v-model="profile.first_name"
+            class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
+            placeholder="First Name"
+            required
+          />
+        </div>
+      </div>
+      <div class="grid gap-4 mb-6 lg:grid-cols-2 md:grid-cols-2 mt-6">
+        <div class="relative">
+          <div class="absolute top-2 left-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="h-5 w-5 text-gray-300"
+              viewBox="0 0 256 256"
+            >
+              <g fill="currentColor">
+                <path
+                  d="M192 96a64 64 0 1 1-64-64a64 64 0 0 1 64 64"
+                  opacity="0.2"
+                />
+                <path
+                  d="M230.92 212c-15.23-26.33-38.7-45.21-66.09-54.16a72 72 0 1 0-73.66 0c-27.39 8.94-50.86 27.82-66.09 54.16a8 8 0 1 0 13.85 8c18.84-32.56 52.14-52 89.07-52s70.23 19.44 89.07 52a8 8 0 1 0 13.85-8M72 96a56 56 0 1 1 56 56a56.06 56.06 0 0 1-56-56"
+                />
+              </g>
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="first_name"
+            v-model="profile.last_name"
+            class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
+            placeholder="Middle Name"
+            required
+          />
+        </div>
+        <div class="relative">
+          <div class="absolute top-2 left-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="h-5 w-5 text-gray-300"
+              viewBox="0 0 256 256"
+            >
+              <g fill="currentColor">
+                <path
+                  d="M192 96a64 64 0 1 1-64-64a64 64 0 0 1 64 64"
+                  opacity="0.2"
+                />
+                <path
+                  d="M230.92 212c-15.23-26.33-38.7-45.21-66.09-54.16a72 72 0 1 0-73.66 0c-27.39 8.94-50.86 27.82-66.09 54.16a8 8 0 1 0 13.85 8c18.84-32.56 52.14-52 89.07-52s70.23 19.44 89.07 52a8 8 0 1 0 13.85-8M72 96a56 56 0 1 1 56 56a56.06 56.06 0 0 1-56-56"
+                />
+              </g>
+            </svg>
+          </div>
+          <input
+            type="text"
+            id="first_name"
+            v-model="profile.other_name"
+            class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
+            placeholder="Other Name"
+            required
+          />
+        </div>
+      </div>
+      <!-- <div>
         <div class="relative">
           <div class="absolute top-2 left-2">
             <svg
@@ -151,6 +274,38 @@
             required
           />
         </div>
+      </div> -->
+      <div>
+        <div class="relative mt-6">
+          <div class="absolute top-2 left-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="h-5 w-5 text-gray-300"
+              viewBox="0 0 256 256"
+            >
+              <g fill="currentColor">
+                <path
+                  d="M136 108a52 52 0 1 1-52-52a52 52 0 0 1 52 52"
+                  opacity="0.2"
+                />
+                <path
+                  d="M117.25 157.92a60 60 0 1 0-66.5 0a95.83 95.83 0 0 0-47.22 37.71a8 8 0 1 0 13.4 8.74a80 80 0 0 1 134.14 0a8 8 0 0 0 13.4-8.74a95.83 95.83 0 0 0-47.22-37.71M40 108a44 44 0 1 1 44 44a44.05 44.05 0 0 1-44-44m210.14 98.7a8 8 0 0 1-11.07-2.33A79.83 79.83 0 0 0 172 168a8 8 0 0 1 0-16a44 44 0 1 0-16.34-84.87a8 8 0 1 1-5.94-14.85a60 60 0 0 1 55.53 105.64a95.83 95.83 0 0 1 47.22 37.71a8 8 0 0 1-2.33 11.07"
+                />
+              </g>
+            </svg>
+          </div>
+          <select
+            v-model="profile.role_name"
+            class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
+          >
+            <option value="">
+              <strong>Group Admin</strong>
+            </option>
+            <option value="Customer">Customer</option>
+          </select>
+        </div>
       </div>
       <div>
         <div class="relative mt-6">
@@ -174,12 +329,15 @@
             </svg>
           </div>
           <select
+            v-model="profile.gender"
             class="bg-white dark:bg-gray-700 dark:text-white border border-gray-200 dark:border-gray-600 text-gray-500 font-regular text-sm rounded-lg focus:ring-green-200 dark:focus:ring-gray-600 focus:border-gray-50 dark:focus:border-gray-500 block w-full me-10 ps-10 pe-3 py-2"
           >
             <option value="">
-              <strong>Group Admin</strong>
+              <strong>Gender</strong>
             </option>
-            <option value="kileleshwa">Customer</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
           </select>
         </div>
       </div>
@@ -215,4 +373,15 @@
     </div>
   </div>
 </template>
-<script></script>
+<script setup lang="ts">
+const props = defineProps({
+  profile: {
+    type: Object,
+    required: true,
+    // validator: (value) => {
+    //   // You can validate the object structure here if needed
+    //   return "username" in value && "email" in value && "age" in value;
+    // },
+  },
+});
+</script>

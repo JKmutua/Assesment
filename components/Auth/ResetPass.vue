@@ -1,11 +1,13 @@
 <template>
-  <section class="bg-green-50 dark:bg-gray-900">
+  <section class="bg-slate-50 dark:bg-gray-900">
     <Toast />
     <div
       class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen md:h-screen lg:py-0"
     >
       <div class="w-full md:mt-0 sm:max-w-md xl:p-0">
-        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <div
+          class="p-6 space-y-4 md:space-y-6 sm:p-12 sm:mx-6 bg-white dark:bg-gray-800 rounded-md"
+        >
           <h1
             class="text-xl font-bold text-center leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
           >
@@ -25,7 +27,7 @@
                 id="email"
                 v-model="credential"
                 placeholder="johndoe@gmail.com"
-                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                class="bg-white border border-gray-200 text-gray-900 sm:text-sm rounded-md block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-transparent dark:border-gray-700 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
               />
             </div>
 

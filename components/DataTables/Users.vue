@@ -22,7 +22,7 @@
           <span class="me-2 text-[0.8rem]">Refresh Data</span>
         </button>
         <NuxtLink
-          to="/admin/users/users"
+          to="/admin/users/new_users"
           class="me-2 flex text-white bg-amber-500 text-sm hover:bg-opacity-90 font-regular py-1 px-2.5 rounded"
         >
           <i style="font-size: 0.9rem" class="pi pi-user-plus my-auto me-1"></i>
@@ -64,9 +64,7 @@
           </div> -->
       </div>
     </div>
-    <div
-      class="mt-6 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
-    >
+    <div class="mt-6 rounded-md bg-white dark:bg-gray-800">
       <!-- <pre>{{ AllCustomers }}</pre> -->
       <DataTable
         class="bg-white dark-bg-gray-800 custom-datatable"
@@ -89,7 +87,7 @@
           field="username"
           header="Username"
           style="width: 15%"
-          headerStyle="font-size: 15px; text-gray-500 dark:text-gray-300"
+          headerStyle="font-size: 13px; text-transform: uppercase;"
         >
           <template #body="{ data }">
             <div class="flex items-center gap-2">
@@ -133,7 +131,7 @@
           field="phone_number"
           header="Phone Number"
           style="width: 25%"
-          headerStyle="font-size: 15px;"
+          headerStyle="font-size: 13px; text-transform: uppercase;"
         >
           <template #body="{ data }">
             <span class="text-sm text-gray-500 dark:text-gray-300">
@@ -145,7 +143,7 @@
           field="email"
           header="Email"
           style="width: 25%"
-          headerStyle="font-size: 15px;"
+          headerStyle="font-size: 13px; text-transform: uppercase;"
         >
           <template #body="{ data }">
             <span class="text-sm text-gray-500 dark:text-gray-300">
@@ -157,7 +155,7 @@
           field="gender"
           header="Gender"
           style="width: 25%"
-          headerStyle="font-size: 15px; text-gray-500 dark:text-gray-300"
+          headerStyle="font-size: 13px; text-transform: uppercase;"
         >
           <template #body="{ data }">
             <span class="text-sm text-gray-500 dark:text-gray-300">
@@ -169,7 +167,7 @@
           field="role_name"
           header="Role"
           style="width: 25%"
-          headerStyle="font-size: 15px; text-gray-500 dark:text-gray-300"
+          headerStyle="font-size: 13px; text-transform: uppercase;"
         >
           <template #body="{ data }">
             <span class="text-sm text-gray-500 dark:text-gray-300">
@@ -181,7 +179,7 @@
           field="first_name"
           header="Full Name"
           style="width: 35%"
-          headerStyle="font-size: 15px;"
+          headerStyle="font-size: 13px; text-transform: uppercase;"
         >
           <template #body="{ data }">
             <span class="flex text-sm text-gray-500 dark:text-gray-300">
@@ -199,12 +197,12 @@
           field="state_name"
           header="Status"
           style="width: 25%"
-          headerStyle="font-size: 15px;"
+          headerStyle="font-size: 13px; text-transform: uppercase;"
         >
           <template #body="{ data }">
             <span
               v-if="data.state_name === 'Active'"
-              class="bg-green-300 bg-opacity-20 rounded-lg px-2 py-0.5 text-green-300"
+              class="bg-green-300 bg-opacity-20 rounded-full px-2.5 border border-green-200 py-1.5 text-green-300"
             >
               <small class="my-auto" style="font-size: 12px; font-weight: 500"
                 >Active</small
@@ -212,10 +210,10 @@
             </span>
             <span
               v-else
-              class="bg-red-300 bg-opacity-20 rounded-lg px-2 py-0.5 text-red-300"
+              class="bg-red-300 bg-opacity-20 border border-red-200 rounded-lg px-2.5 py-1.5 text-red-300"
             >
               <small class="my-auto" style="font-size: 12px; font-weight: 500"
-                >Active</small
+                >Inctive</small
               >
             </span>
           </template></Column
@@ -224,7 +222,7 @@
           field="dob"
           header="DOB"
           style="width: 25%"
-          headerStyle="font-size: 15px; text-gray-500 dark:text-gray-300"
+          headerStyle="font-size: 13px; text-transform: uppercase;"
         >
           <template #body="{ data }">
             <span class="text-sm text-gray-500 dark:text-gray-300">
@@ -237,7 +235,7 @@
           field=""
           header="Actions"
           style="width: 25%"
-          headerStyle="font-size: 15px;"
+          headerStyle="font-size: 13px; text-transform: uppercase;"
         >
           <template #body="{ data }">
             <span class="flex space-x-2">
@@ -255,16 +253,17 @@
                 icon="pi pi-pen-to-square"
                 severity="warn"
               />
-              <Button
+              <!-- <Button
                 size="small"
                 rounded
                 outlined
                 icon="pi pi-eye"
                 severity="success"
                 @click="$router.push('/data/customers/Customer_Profile')"
-              />
-            </span> </template
-        ></Column>
+              /> -->
+            </span>
+          </template></Column
+        >
         <template v-if="loading" #empty>
           <div class="flex justify-center">
             <ProgressSpinner
@@ -300,7 +299,7 @@
           </div>
         </div>
       </div> -->
-      <div class="">
+      <div class="border-x border-b border-gray-200 dark:border-gray-700">
         <Paginator
           :rows="rows"
           :totalRecords="totalRecords"

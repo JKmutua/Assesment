@@ -54,6 +54,10 @@ const MyPreset = definePreset(Aura, {
   },
 });
 export default defineNuxtConfig({
+  app: {
+    layoutTransition: { name: "layout", mode: "out-in" },
+  },
+
   ssr: false,
   devtools: { enabled: true },
   modules: [

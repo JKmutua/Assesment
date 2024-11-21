@@ -110,7 +110,7 @@ export const useAuthStore = defineStore("auth", {
         }
       );
       const router = useRouter();
-      if (data.value.code == "200.000.000") {
+      if (data.value.code == "100.000.000") {
         this.authenticated = false; // set authenticated  state value to false
         this.verified = false;
         token.value = null; // clear the token cookie

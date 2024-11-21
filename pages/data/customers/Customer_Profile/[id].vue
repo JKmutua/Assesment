@@ -16,7 +16,7 @@ interface ProfileData {
   phone_number: string;
   first_name: string;
   last_name: string;
-  other_name: string | null;
+  other_name: string;
   gender: string;
   is_superuser: boolean;
   terms_and_conditions_accepted: boolean;
@@ -36,17 +36,15 @@ interface ProfileData {
   physical_work_address: string | null;
   country: string;
   country_of_work: string;
-  permissions: any[]; // Array of permissions
+  permissions: any[]; // If permissions have specific structure, define it more clearly
 }
 
-// Define the ApiResponse interface
 interface ApiResponse {
-  profile: {
-    code: string;
-    message: string;
-    data: ProfileData;
-  }; // Profile is an array of objects with code, message, and data
+  code: string;
+  message: string;
+  data: ProfileData;
 }
+
 const profile = ref<ProfileData | null>(null);
 // Fetch profile data using useAsyncData
 const { data, error, status } = await useAsyncData("profile", async () => {
@@ -61,7 +59,7 @@ const { data, error, status } = await useAsyncData("profile", async () => {
       },
     }
   );
-  return { profile: profileData };
+  return profileData as ApiResponse;
 });
 
 // Create a ref to hold profile data (from the first item in the profile array)
@@ -69,16 +67,16 @@ const { data, error, status } = await useAsyncData("profile", async () => {
 // Set loading state based on the status of the fetch operation
 onMounted(() => {
   isLoading.value = status.value === "pending";
-  console.log(data.value);
-  if (data.value && data.value.profile && data.value?.profile) {
-    profile.value = data.value.profile?.data;
+  if (data.value) {
+    profile.value = data.value.data; // Access the 'data' field directly
+    console.log("@@@@@@@@@@@@@@@@@@@@@@", data.value.data);
   }
 });
 </script>
 <template>
   <div class="mx-auto max-w-screen-2xl px-4">
     <div
-      class="h-screen py-3 sm:py-8 lg:py-8"
+      class="min-h-screen py-3 sm:py-8 lg:py-8"
       v-if="status != 'pending' && profile != null"
     >
       <div class="grid grid-cols-3 gap-4">
@@ -275,7 +273,7 @@ onMounted(() => {
             id="profile"
             class="p-3 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
           >
-            <Profile />
+            <Profile :profile="profile" />
           </div>
           <div
             v-if="selected_section == 'budgets'"

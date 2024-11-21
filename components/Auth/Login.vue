@@ -1,11 +1,13 @@
 <template>
-  <section class="bg-slate-100 dark:bg-gray-900">
+  <section class="bg-slate-50 dark:bg-gray-900">
     <Toast />
     <div
       class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen md:h-screen lg:py-0"
     >
       <div class="w-full md:mt-0 sm:max-w-md xl:p-0">
-        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <div
+          class="z-50 p-6 space-y-4 md:space-y-6 sm:p-12 sm:mx-6 bg-white dark:bg-gray-800 rounded-md"
+        >
           <h1
             class="text-xl font-bold text-center leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
           >
@@ -29,7 +31,7 @@
                     type="text"
                     id="phone-input"
                     v-model="user.credential"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                    class="bg-white border border-gray-200 text-gray-900 sm:text-sm rounded-md block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-transparent dark:border-gray-700 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     placeholder="eg. John"
                     required
@@ -45,12 +47,12 @@
               >
               <div class="flex items-center">
                 <input
-                  type="password"
+                  :type="see_password == true ? 'text' : 'password'"
                   name="password"
                   id="password"
                   v-model="user.password"
                   placeholder="password"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-md block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+                  class="bg-white border border-gray-200 text-gray-900 sm:text-sm rounded-md block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-transparent dark:border-gray-700 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                 />
                 <span
                   class="-ml-8 text-gray-500 dark:text-gray-400"
@@ -146,6 +148,22 @@
         </div>
       </div>
     </div>
+    <!-- <div class="z-0">
+      <div className="z-10 bg-transparent left-0 right-0">
+        <ul className="circles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div> -->
   </section>
 </template>
 <script lang="ts" setup>
@@ -200,6 +218,179 @@ const login = async () => {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+/*End Animations*/
+/*
+-- Start BackGround Animation 
+*/
+/* .area {
+  
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+} */
+
+.circles {
+  /* background: #22c55e; */
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 96%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 10px;
+  height: 10px;
+  /* background: rgba(255, 255, 255, 0.2); */
+
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  background: #22c55e;
+  width: 7px;
+  height: 7px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  background: #22c55e;
+  width: 5px;
+  height: 5px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  background: #22c55e;
+  width: 10px;
+  height: 10px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  background: #22c55e;
+  width: 10px;
+  height: 10px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  background: #22c55e;
+  width: 10px;
+  height: 10px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  background: #22c55e;
+  width: 10px;
+  height: 10px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+  background: #22c55e;
+  left: 35%;
+  width: 10px;
+  height: 10px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+  background: #22c55e;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+  background: #22c55e;
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+  background: #22c55e;
+  left: 85%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
   }
 }
 </style>
