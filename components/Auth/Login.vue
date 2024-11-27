@@ -1,153 +1,99 @@
 <template>
-  <section class="bg-slate-50 dark:bg-gray-900">
-    <div
-      class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen md:h-screen lg:py-0"
-    >
-      <div class="w-full md:mt-0 sm:max-w-md xl:p-0">
-        <div
-          class="z-50 p-6 space-y-4 md:space-y-6 sm:p-12 sm:mx-6 bg-white dark:bg-gray-800 rounded-md"
-        >
-          <h1
-            class="text-xl font-bold text-center leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white"
-          >
-            Sign in to your account
-          </h1>
-          <form class="space-y-4 md:space-y-6" action="#">
-            <div>
-              <label
-                for="email"
-                class="block mb-2 text-[0.8rem] font-medium text-gray-900 dark:text-white"
-                >Username</label
+  <div>
+    <!-- source:https://codepen.io/owaiswiz/pen/jOPvEPB -->
+    <div class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
+      <div
+        class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1"
+      >
+        <div class="flex-1 bg-green-100 text-center hidden lg:flex p-0.5">
+          <div
+            class="w-full bg-cover p-2 bg-center bg-no-repeat bg-[url('/assets/images/login.png')]"
+          ></div>
+        </div>
+        <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-20">
+          <div class="mt-12 flex flex-col items-center">
+            <div class="w-full flex-1 mt-8">
+              <div
+                class="flex flex-col items-start font-semibold text-gray-500"
               >
-              <div class="flex items-center">
-                <!-- <label
-                  for="phone-input"
-                  class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-                  >Phone number:</label
-                > -->
-                <div class="relative w-full">
-                  <input
-                    type="text"
-                    id="phone-input"
-                    v-model="user.username"
-                    class="bg-white border border-gray-200 text-gray-900 sm:text-sm rounded-md block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-transparent dark:border-gray-700 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                    placeholder="eg. John"
-                    required
-                  />
-                </div>
+                WELCOME TO
               </div>
-            </div>
-            <div>
-              <label
-                for="password"
-                class="block mb-2 text-[0.8rem] font-medium text-gray-900 dark:text-white"
-                >Password</label
+              <div
+                class="flex flex-col items-start text-green-700 font-extrabold leading-10 text-4xl"
               >
-              <div class="flex items-center">
-                <input
-                  :type="see_password == true ? 'text' : 'password'"
-                  name="password"
-                  id="password"
-                  v-model="user.password"
-                  placeholder="password"
-                  class="bg-white border border-gray-200 text-gray-900 sm:text-sm rounded-md block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-transparent dark:border-gray-700 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                />
-                <span
-                  class="-ml-8 text-gray-500 dark:text-gray-400"
-                  role="button"
-                  v-if="!see_password"
-                  @click="see_password = !see_password"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                    class="h-5 w-5"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"
-                    />
-                  </svg>
-                </span>
-                <span
-                  class="-ml-8 text-gray-500 dark:text-gray-400"
-                  role="button"
-                  v-if="see_password"
-                  @click="see_password = !see_password"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    class="h-5 w-5"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="m63.998 86.005l21.998-21.998L447.999 426.01l-21.998 21.998zM259.34 192.09l60.57 60.57a64.07 64.07 0 0 0-60.57-60.57m-6.68 127.82l-60.57-60.57a64.07 64.07 0 0 0 60.57 60.57"
-                    />
-                    <path
-                      fill="currentColor"
-                      d="M256 352a96 96 0 0 1-92.6-121.34l-69.07-69.08C66.12 187.42 39.24 221.14 16 256c26.42 44 62.56 89.24 100.2 115.18C159.38 400.92 206.33 416 255.76 416A233.47 233.47 0 0 0 335 402.2l-53.61-53.6A95.84 95.84 0 0 1 256 352m0-192a96 96 0 0 1 92.6 121.34L419.26 352c29.15-26.25 56.07-61.56 76.74-96c-26.38-43.43-62.9-88.56-101.18-114.82C351.1 111.2 304.31 96 255.76 96a222.92 222.92 0 0 0-78.21 14.29l53.11 53.11A95.84 95.84 0 0 1 256 160"
-                    />
-                  </svg>
-                </span>
+                Inua Mkulima- Subsidy Program
               </div>
-            </div>
 
-            <div class="flex items-center justify-between">
-              <div class="flex items-start">
-                <div class="flex items-center h-5">
-                  <input
-                    id="remember"
-                    aria-describedby="remember"
-                    type="checkbox"
-                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
-                  />
-                </div>
-                <div class="ml-3 text-sm">
-                  <label for="remember" class="text-gray-500 dark:text-gray-300"
-                    >Remember me</label
-                  >
-                </div>
-              </div>
-              <a
-                href="/auth/resetpassword"
-                class="text-[0.8rem] font-medium text-primary-600 hover:underline dark:text-white"
-                >Forgot password?</a
+              <div
+                class="mt-6 flex flex-col items-start text-gray-500 font-bold leading-10 text-sm"
               >
-            </div>
-            <button
-              type="submit"
-              @click.prevent="login"
-              class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md text-sm px-5 py-3.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-            >
-              <div class="flex justify-center">
-                <span v-if="loading == false">Sign in</span>
-                <span v-if="loading == true">Authenticating</span>
-                <span v-if="loading == true" class="loader my-auto ms-2"></span>
+                Enter your username to continue
               </div>
-            </button>
-            <div class="text-center" v-if="error">
-              <span class="text-[0.8rem] text-red-500 font-medium"
-                >Wrong username or password. Kindly verify and try again.
-              </span>
+
+              <div class="w-full">
+                <div>
+                  <div class="relative">
+                    <span
+                      class="absolute end-0 bottom-3 text-gray-500 dark:text-gray-400"
+                    >
+                      <svg
+                        class="w-4 h-4 rtl:rotate-[270deg]"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 19 18"
+                      >
+                        <path
+                          d="M18 13.446a3.02 3.02 0 0 0-.946-1.985l-1.4-1.4a3.054 3.054 0 0 0-4.218 0l-.7.7a.983.983 0 0 1-1.39 0l-2.1-2.1a.983.983 0 0 1 0-1.389l.7-.7a2.98 2.98 0 0 0 0-4.217l-1.4-1.4a2.824 2.824 0 0 0-4.218 0c-3.619 3.619-3 8.229 1.752 12.979C6.785 16.639 9.45 18 11.912 18a7.175 7.175 0 0 0 5.139-2.325A2.9 2.9 0 0 0 18 13.446Z"
+                        />
+                      </svg>
+                    </span>
+                    <input
+                      type="text"
+                      id="floating-phone-number"
+                      class="block py-2.5 ps-6 pe-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                      placeholder=" "
+                    />
+                    <label
+                      for="floating-phone-number"
+                      class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:start-6 peer-focus:start-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto"
+                      >Phone number</label
+                    >
+                  </div>
+                </div>
+                <button
+                  class="mt-8 tracking-wide font-semibold text-white bg-amber-500 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                >
+                  <span class="ml-"> Continue </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="0.5em"
+                    height="1em"
+                    class="h-5 w-5"
+                    viewBox="0 0 12 24"
+                  >
+                    <defs>
+                      <path
+                        id="weuiArrowOutlined0"
+                        fill="currentColor"
+                        d="m7.588 12.43l-1.061 1.06L.748 7.713a.996.996 0 0 1 0-1.413L6.527.52l1.06 1.06l-5.424 5.425z"
+                      />
+                    </defs>
+                    <use
+                      fill-rule="evenodd"
+                      href="#weuiArrowOutlined0"
+                      transform="rotate(-180 5.02 9.505)"
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div class="flex justify-center mt-3">
-              <span
-                class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-                >© 2024 <a href="#" class="hover:underline">Justus Katunga™</a>.
-                All Rights Reserved.
-              </span>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
