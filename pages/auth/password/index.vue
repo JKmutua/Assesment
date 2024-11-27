@@ -1,5 +1,5 @@
 <template>
-  <div><AuthLogin2 /></div>
+  <div><AuthLoginPassword /></div>
 </template>
 <script setup>
 definePageMeta({
