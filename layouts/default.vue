@@ -149,43 +149,7 @@
                   />
                 </svg>
               </button>
-              <button
-                class="hidden lg:block md:block text-[#23a455] mt-0.5 me-3"
-                @click="toggle_aside()"
-                type="button"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  class="h-7 w-7"
-                  v-if="toggled_main"
-                  height="1em"
-                  viewBox="0 0 32 32"
-                >
-                  <path
-                    fill="currentColor"
-                    d="m19.03 4.28l-11 11l-.686.72l.687.72l11 11l1.44-1.44L10.187 16l10.28-10.28z"
-                  />
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  v-else
-                  class="h-7 w-7"
-                  height="1em"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    d="M4 5h12M4 12h16M4 19h8"
-                    color="currentColor"
-                  />
-                </svg>
-              </button>
+
               <h1
                 class="text-2xl font-bold text-gray-900 dark:text-white mt-0.5 capitalize"
               ></h1>
@@ -198,83 +162,4 @@
     </div>
   </div>
 </template>
-<script setup>
-const token = ref(useCookie("token"));
-import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
-import { useAuthStore } from "~/store/auth"; // import the auth store we just created
-const { logUserOut } = useAuthStore(); // use authenticateUser action from  auth store
-const router = useRouter();
-const logout = () => {
-  logUserOut();
-};
-function containsNumbers(str) {
-  return /\d/.test(str); // \d matches any digit (0-9)
-}
-onMounted(() => {
-  if (
-    localStorage.getItem("color-theme") === "dark" ||
-    (!("color-theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-  var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
-  var themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
-
-  // Change the icons inside the button based on previous settings
-  if (
-    localStorage.getItem("color-theme") === "dark" ||
-    (!("color-theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    themeToggleLightIcon.classList.remove("hidden");
-  } else {
-    themeToggleDarkIcon.classList.remove("hidden");
-  }
-});
-const toggled_main = ref(true);
-function toggle_aside() {
-  let aside = document.getElementById("sidebar-multi-level-sidebar");
-  let mainContent = document.getElementById("main-content");
-  if (aside.classList.contains("hidden")) {
-    aside.classList.remove("hidden");
-    mainContent.classList.add("sm:ml-60");
-    this.toggled_main = true;
-  } else {
-    aside.classList.add("hidden");
-    mainContent.classList.remove("sm:ml-60");
-    this.toggled_main = false;
-  }
-}
-
-function toggle_light_mode() {
-  var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
-  var themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
-  var themeToggleBtn = document.getElementById("theme-toggle");
-  themeToggleDarkIcon.classList.toggle("hidden");
-  themeToggleLightIcon.classList.toggle("hidden");
-
-  // if set via local storage previously
-  if (localStorage.getItem("color-theme")) {
-    if (localStorage.getItem("color-theme") === "light") {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("color-theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("color-theme", "light");
-    }
-
-    // if NOT set via local storage previously
-  } else {
-    if (document.documentElement.classList.contains("dark")) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("color-theme", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("color-theme", "dark");
-    }
-  }
-}
-</script>
+<script setup></script>
