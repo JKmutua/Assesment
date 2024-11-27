@@ -3,11 +3,10 @@
     class="absolute max-w-screen-xl mx-auto left-0 right-0 w-full z-20 bg-transparent dark:bg-transparent p-4 flex justify-between"
   >
     <a
-      href="https://www.spinmobile.co/"
+      href="#"
       class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
     >
-      <img class="w-8 h-8 mr-2" src="/assets/images/M-logo.png" alt="logo" />
-      SpinID
+      Assesment
     </a>
     <div class="">
       <button

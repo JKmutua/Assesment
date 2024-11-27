@@ -1,6 +1,5 @@
 <template>
   <section class="bg-slate-50 dark:bg-gray-900">
-    <Toast />
     <div
       class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen md:h-screen lg:py-0"
     >
@@ -30,7 +29,7 @@
                   <input
                     type="text"
                     id="phone-input"
-                    v-model="user.credential"
+                    v-model="user.username"
                     class="bg-white border border-gray-200 text-gray-900 sm:text-sm rounded-md block w-full p-2.5 focus:ring-0 focus:border-gray-300 dark:bg-transparent dark:border-gray-700 dark:focus:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     placeholder="eg. John"
@@ -124,7 +123,7 @@
             <button
               type="submit"
               @click.prevent="login"
-              class="w-full text-white bg-[#23a455] hover:bg-[#008100] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md text-sm px-5 py-3.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              class="w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-md text-sm px-5 py-3.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               <div class="flex justify-center">
                 <span v-if="loading == false">Sign in</span>
@@ -140,7 +139,7 @@
             <div class="flex justify-center mt-3">
               <span
                 class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-                >© 2024 <a href="#" class="hover:underline">Spin Mobile™</a>.
+                >© 2024 <a href="#" class="hover:underline">Justus Katunga™</a>.
                 All Rights Reserved.
               </span>
             </div>
@@ -148,22 +147,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="z-0">
-      <div className="z-10 bg-transparent left-0 right-0">
-        <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-    </div> -->
   </section>
 </template>
 <script lang="ts" setup>
@@ -171,19 +154,17 @@ import { ref } from "vue";
 const see_password = ref(false);
 const loading = ref(false);
 const error = ref(false);
-const token = ref(useCookie("token"));
 
 import { storeToRefs } from "pinia"; // import storeToRefs helper hook from pinia
 import { useAuthStore } from "~/store/auth"; // import the auth store we just created
 
 const { authenticateUser } = useAuthStore(); // use authenticateUser action from  auth store
-const { profileUser } = useAuthStore(); // use authenticateUser action from  auth store
 
 const { authenticated } = storeToRefs(useAuthStore()); // make authenticated state reactive with storeToRefs
 
 const user = ref({
-  credential: "justus",
-  password: "Ak@s49",
+  username: "emilys",
+  password: "emilypass",
 });
 const router = useRouter();
 const login = async () => {
@@ -260,17 +241,6 @@ const login = async () => {
     opacity: 1;
   }
 }
-/*End Animations*/
-/*
--- Start BackGround Animation 
-*/
-/* .area {
-  
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  z-index: -1;
-} */
 
 .circles {
   /* background: #22c55e; */
