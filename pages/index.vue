@@ -1,6 +1,9 @@
 <template>
   <div class="max-w-screen-2xl p-4 mx-auto mb-2">
     <div class="">
+      <div class="font-extrabold text-xl text-gray-700 mb-3">
+        Product Details
+      </div>
       <div class="flex">
         <button class="flex rounded bg-amber-400 text-white px-2.5 py-1.5">
           <div>

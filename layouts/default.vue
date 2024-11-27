@@ -121,7 +121,7 @@
       </aside>
 
       <div class="sm:ml-60 bg-slate-100 dark:bg-gray-900" id="main-content">
-        <div class="pt-28 mx-auto max-w-screen-2xl px-4">
+        <div class="pt-20 mx-auto max-w-screen-2xl px-4">
           <div class="flex justify-between">
             <div class="flex">
               <button
