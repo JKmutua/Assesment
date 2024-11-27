@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-xl mx-auto mb-2">
+  <div class="max-w-screen-2xl p-4 mx-auto mb-2">
     <div
       v-if="data.products.length != 0"
       class="grid w-full grid-cols-1 lg:grid-cols-4 md:grid-cols-2 px-2 gap-10 flex flex-row"
