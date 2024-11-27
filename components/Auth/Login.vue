@@ -3,7 +3,7 @@
     <!-- source:https://codepen.io/owaiswiz/pen/jOPvEPB -->
     <div class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
       <div
-        class="max-w-screen-xl m-0 sm:m-20 bg-white shadow sm:rounded-lg flex justify-center flex-1"
+        class="max-w-screen-xl m-0 sm:m-32 bg-white shadow sm:rounded-lg flex justify-center flex-1"
       >
         <div class="flex-1 bg-green-100 text-center hidden lg:flex p-0.5">
           <div
