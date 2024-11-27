@@ -81,7 +81,7 @@
     <div class="">
       <aside
         id="sidebar-multi-level-sidebar"
-        class="fixed top-20 left-0 z-40 w-60 transition-transform -translate-x-full sm:translate-x-0 border-e border-gray-200 dark:border-gray-700"
+        class="fixed sm:top-20 top-24 left-0 z-40 w-60 transition-transform -translate-x-full sm:translate-x-0 border-e border-gray-200 dark:border-gray-700"
         aria-label="Sidebar"
       >
         <div class="h-screen w-full bg-white dark:bg-gray-800 py-3.5">
@@ -125,7 +125,7 @@
           <div class="flex justify-between">
             <div class="flex">
               <button
-                class="lg:hidden md:hidden text-[#23a455] mt-0.5 me-3"
+                class="lg:hidden md:hidden text-[#23a455] mt-8 me-3"
                 data-drawer-target="sidebar-multi-level-sidebar"
                 data-drawer-toggle="sidebar-multi-level-sidebar"
                 aria-controls="sidebar-multi-level-sidebar"
