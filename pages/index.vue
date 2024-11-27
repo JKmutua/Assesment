@@ -7,10 +7,10 @@
       <div
         v-for="product in data.products"
         :key="product.id"
-        class="w-72 bg-white dark:bg-gray-800 text-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
+        class="sm:w-72 w-full bg-white dark:bg-gray-800 text-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl"
       >
-        <a href="#">
-          <div class="px-4 py-3 w-72">
+        <a href="#" class="">
+          <div class="px-4 py-3 w-full">
             <img :src="product.thumbnail" alt="" />
             <span class="text-gray-400 mr-3 uppercase text-xs">{{
               product.title
