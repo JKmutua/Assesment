@@ -11,7 +11,6 @@ import { initFlowbite } from "flowbite";
 import { ref } from "vue";
 import { useToast } from "primevue/usetoast";
 const toast = useToast();
-// initialize components based on data attribute selectors
 onMounted(() => {
   initFlowbite();
 });

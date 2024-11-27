@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-xl mx-auto">
+  <div class="max-w-screen-xl mx-auto mb-2">
     <div
       v-if="data.products.length != 0"
       class="grid w-full grid-cols-1 lg:grid-cols-4 md:grid-cols-2 px-2 gap-10 flex flex-row"
@@ -11,7 +11,7 @@
       >
         <a href="#" class="">
           <div class="px-4 py-3 w-full">
-            <img :src="product.thumbnail" alt="" />
+            <img :src="product.thumbnail" alt="loading..." />
             <span class="text-gray-400 mr-3 uppercase text-xs">{{
               product.title
             }}</span>
