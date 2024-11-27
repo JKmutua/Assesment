@@ -89,7 +89,9 @@
             <tbody>
               <tr v-for="product in SelectedProducts" :key="product.id">
                 <td>{{ product.title }}</td>
+                <td></td>
                 <td>{{ product.price }} kes</td>
+                <td></td>
                 <td>
                   <span
                     ><svg
