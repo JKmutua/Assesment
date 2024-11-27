@@ -11,6 +11,7 @@
       >
         <a href="#">
           <div class="px-4 py-3 w-72">
+            <img :src="product.thumbnail" alt="" />
             <span class="text-gray-400 mr-3 uppercase text-xs">{{
               product.title
             }}</span>
