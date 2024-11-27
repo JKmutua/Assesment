@@ -188,9 +188,7 @@
               </button>
               <h1
                 class="text-2xl font-bold text-gray-900 dark:text-white mt-0.5 capitalize"
-              >
-                Product Details
-              </h1>
+              ></h1>
             </div>
           </div>
         </div>
